@@ -6,9 +6,9 @@
 \contentsline {subsection}{\numberline {2.4}Registered Users}{4}
 \contentsline {subsection}{\numberline {2.5}Rating}{5}
 \contentsline {subsection}{\numberline {2.6}Browsing}{5}
-\contentsline {subsection}{\numberline {2.7}Searching}{5}
-\contentsline {subsection}{\numberline {2.8}Sale}{5}
-\contentsline {subsection}{\numberline {2.9}Bidding}{5}
-\contentsline {subsection}{\numberline {2.10}Order and Sale Reports}{7}
-\contentsline {subsection}{\numberline {2.11}Delivery}{7}
-\contentsline {section}{\numberline {3}Conceptual Design}{8}
+\contentsline {subsection}{\numberline {2.7}Searching}{8}
+\contentsline {subsection}{\numberline {2.8}Sale}{9}
+\contentsline {subsection}{\numberline {2.9}Bidding}{9}
+\contentsline {subsection}{\numberline {2.10}Order and Sale Reports}{11}
+\contentsline {subsection}{\numberline {2.11}Delivery}{11}
+\contentsline {section}{\numberline {3}Conceptual Design}{12}

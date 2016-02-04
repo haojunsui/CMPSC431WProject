@@ -15,7 +15,7 @@
 \tikzstyle{every relationship} = []
 \tikzstyle{every isa} = []
 
-\title{CMPSC 431W Project Proposal\\Phase 1\\Team: Big Leg Carry}
+\title{CMPSC 431W Project Proposal\\Team: Big Leg Carry}
 \author{
 	Sui, Haojun\\
 	\texttt{hzs5220@psu.edu}
@@ -102,8 +102,65 @@ The registered users are the buyers who can buy or bid on an item (car). Buyer m
 \subsection{Rating}
 
 \subsection{Browsing}
+Browsing is one of the most important feature of a website, especially for a car selling website. It has great impact on user experience for the website, a good browsing feature can give user easy access to the target items, however, a bad browsing feature will prevent user from accessing the target items and sometimes even browse the wrong items.\par
+\textbf{\underline{How it works}}\par
+According to the input, using SQL to select proper table or a specific record. Users are able to browse the items bty traversing the category tree. At each point, they are given a summary of all the items that appear in that category.\par
+\textbf{\underline{Design}}\par
+A good browning feature should have the following attributes:\par
+\begin{enumerate}
+\item Easy to use (good design)
+\item Accurate (well built database and proper SQL instructions)
+\item Quick response (well built database and proper SQL instructions)
+\end{enumerate}
+\par Browsing is usually done by a browsing bar. There are two types of browsing bar in our website: horizontal bar and vertical bar. Horizontal bar is on the top of the page and vertical bar (box) is on the right of the page.\par
+Horizontal bar consists of 3 buttons and 3 drop-down menus (See in Figure \ref{horBar}):
+\begin{figure}[!h]
+\caption{Horizontal Bar Design.} \label{horBar}
+\begin{center}
+\includegraphics[width=13cm]{horizontal_bar}
+\end{center}
+\end{figure}
+\par On the main page, browsing bar is placed horizontally on top of the page which is a striking position. By doing this, it provides easy access for users to browse our inventory right after they enter the website.\par
+New Car button and Used Car button: For users who do not have a target car to buy, take users to the new/used car page with our full new/used car inventory.\par
+SELL YOURS button: Take user to sell page.\par
+Drop-down menus: For users who have a target car in mind. First, select make of the car and then select model will take them to the result selected from our database according to the given input. Or users can browse the car by type (sedan, coupe, SUV, other), and jump to the result page with cars of that type.\par
+All inventory pages have a vertical browse bar with all the attributes according to previous input (new/used/type...) Figure \ref{verBar} shows the design of the vertical bar.
+\begin{figure}[!h]
+\caption{Vertical Bar Design.} \label{verBar}
+\begin{center}
+\includegraphics[width=9cm]{vertical_bar}
+\end{center}
+\end{figure}
+\par The reason that it is on vertical and on the right is that user are not disturbed by drop-down menus and focus more one the content.\parEvery change of the drop-down menu will immediately execute a SQL instruction and bring the result to the page.
 
 \subsection{Searching}
+Users are able to search the items by entering some keywords or conditions. As a search result, a list of items that satisfy the search criteria is returned to the users.Searching is another function to get quick access to the target item besides browsing. If a user has a specific car in mind, by using our search bar, he can filter out the non-matching records and gets the desired results directly from our database.\par
+\textbf{\underline{How it works}}\par
+User types a keyword in the search bar and hit enter to search. Website breaks the keyword into several words. The website will search the first word in all the related tables in our database, then search the next word in the result from last word searching.\par
+\textbf{\underline{Simplified Example}}\par
+Assume user search for Audi A5, we breaks the search words into keywords `Audi', `A5'. We first search for Audi. Figure \ref{search_example_audi} shows the results to users.
+\begin{figure}[!h]
+\caption{Search for Audi.} \label{search_example_audi}
+\begin{center}
+\includegraphics[width=9cm]{search_example_audi}
+\end{center}
+\end{figure}
+\par We then search for A5. Figure \ref{search_example_a5} shows the results to users.
+\begin{figure}[!h]
+\caption{Search for A5.} \label{search_example_a5}
+\begin{center}
+\includegraphics[width=9cm]{search_example_a5}
+\end{center}
+\end{figure}
+\par \textbf{\underline{Design}}
+\par Figure \ref{search_bar} shows the design of the search bar.
+\begin{figure}[!h]
+\caption{Search Bar Design.} \label{search_bar}
+\begin{center}
+\includegraphics[width=9cm]{search_bar}
+\end{center}
+\end{figure}
+\par It will be on every page, together with browsing bar so that user can perform a search no matter what page they are on.
 
 \subsection{Sale}
 
