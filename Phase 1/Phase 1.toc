@@ -1,0 +1,14 @@
+\contentsline {section}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {2}Requirement Analysis}{2}
+\contentsline {subsection}{\numberline {2.1}Sale Items}{2}
+\contentsline {subsection}{\numberline {2.2}Categories}{3}
+\contentsline {subsection}{\numberline {2.3}Suppliers}{3}
+\contentsline {subsection}{\numberline {2.4}Registered Users}{4}
+\contentsline {subsection}{\numberline {2.5}Rating}{5}
+\contentsline {subsection}{\numberline {2.6}Browsing}{5}
+\contentsline {subsection}{\numberline {2.7}Searching}{5}
+\contentsline {subsection}{\numberline {2.8}Sale}{5}
+\contentsline {subsection}{\numberline {2.9}Bidding}{5}
+\contentsline {subsection}{\numberline {2.10}Order and Sale Reports}{7}
+\contentsline {subsection}{\numberline {2.11}Delivery}{7}
+\contentsline {section}{\numberline {3}Conceptual Design}{8}
