@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.2)  4 FEB 2016 18:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.2)  4 FEB 2016 19:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -563,86 +563,103 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 File: figures/registered_users.png Graphic file (type png)
 
 <use figures/registered_users.png>
-Package pdftex.def Info: figures/registered_users.png used on input line 98.
+Package pdftex.def Info: figures/registered_users.png used on input line 100.
 (pdftex.def)             Requested size: 369.88582pt x 396.19566pt.
- [4] [5 <./figures/registered_users.png>]
-[6] <figures/horizontal_bar.png, id=45, 525.965pt x 77.28876pt>
+ [4]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[5 <./figures/registered_users.png>] [6] [7]
+<figures/horizontal_bar.png, id=48, 525.965pt x 77.28876pt>
 File: figures/horizontal_bar.png Graphic file (type png)
 
 <use figures/horizontal_bar.png>
-Package pdftex.def Info: figures/horizontal_bar.png used on input line 133.
+Package pdftex.def Info: figures/horizontal_bar.png used on input line 177.
 (pdftex.def)             Requested size: 455.24411pt x 66.89984pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[7] <figures/vertical_bar.png, id=49, 217.81375pt x 384.43625pt>
+ [8 <./figures/horizontal_bar.png>]
+<figures/vertical_bar.png, id=53, 217.81375pt x 384.43625pt>
 File: figures/vertical_bar.png Graphic file (type png)
 
 <use figures/vertical_bar.png>
-Package pdftex.def Info: figures/vertical_bar.png used on input line 144.
+Package pdftex.def Info: figures/vertical_bar.png used on input line 188.
 (pdftex.def)             Requested size: 256.0748pt x 451.96489pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[8 <./figures/horizontal_bar.png>] [9 <./figures/vertical_bar.png>]
+ [9 <./figures/vertical_bar.png>]
 <figures/search_example_audi.png, id=59, 453.695pt x 290.08376pt>
 File: figures/search_example_audi.png Graphic file (type png)
 
 <use figures/search_example_audi.png>
-Package pdftex.def Info: figures/search_example_audi.png used on input line 160
+Package pdftex.def Info: figures/search_example_audi.png used on input line 204
 .
 (pdftex.def)             Requested size: 256.0748pt x 163.72942pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 <figures/search_example_a5.png, id=60, 428.60126pt x 210.7875pt>
 File: figures/search_example_a5.png Graphic file (type png)
 
 <use figures/search_example_a5.png>
-Package pdftex.def Info: figures/search_example_a5.png used on input line 167.
+Package pdftex.def Info: figures/search_example_a5.png used on input line 211.
 (pdftex.def)             Requested size: 256.0748pt x 125.93956pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 <figures/search_bar.png, id=61, 296.10625pt x 61.22874pt>
 File: figures/search_bar.png Graphic file (type png)
 
 <use figures/search_bar.png>
-Package pdftex.def Info: figures/search_bar.png used on input line 175.
+Package pdftex.def Info: figures/search_bar.png used on input line 219.
 (pdftex.def)             Requested size: 256.0748pt x 52.95277pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[10 <./figures/search_example_audi.png> <./figures/search_example_a5.png>]
-[11 <./figures/search_bar.png>] [12] [13]
-<figures/car_comparison.png, id=77, 415.7934pt x 408.0846pt>
-File: figures/car_comparison.png Graphic file (type png)
+[10] [11 <./figures/search_example_audi.png> <./figures/search_example_a5.png> 
+<./figures/search_bar.png>]
 
-<use figures/car_comparison.png>
-Package pdftex.def Info: figures/car_comparison.png used on input line 239.
-(pdftex.def)             Requested size: 369.88582pt x 363.03224pt.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[12]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[13] <figures/delivery.jpg, id=77, 1379.1525pt x 273.02pt>
+File: figures/delivery.jpg Graphic file (type jpg)
+
+<use figures/delivery.jpg>
+Package pdftex.def Info: figures/delivery.jpg used on input line 274.
+(pdftex.def)             Requested size: 369.88582pt x 73.22063pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[14] [15 <./figures/car_comparison.png>] (./Phase 1.aux) ) 
+[14] <figures/car_comparison.png, id=81, 415.7934pt x 408.0846pt>
+File: figures/car_comparison.png Graphic file (type png)
+
+<use figures/car_comparison.png>
+Package pdftex.def Info: figures/car_comparison.png used on input line 290.
+(pdftex.def)             Requested size: 369.88582pt x 363.03224pt.
+ [15 <./figures/delivery.jpg>] [16 <./figures/car_comparison.png>] [17] (./Phas
+e 1.aux) ) 
 Here is how much of TeX's memory you used:
- 13226 strings out of 493042
- 274417 string characters out of 6134661
- 316194 words of memory out of 5000000
- 16497 multiletter control sequences out of 15000+600000
+ 13378 strings out of 493042
+ 276694 string characters out of 6134661
+ 329411 words of memory out of 5000000
+ 16647 multiletter control sequences out of 15000+600000
  9083 words of font info for 33 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,11n,58p,1348b,733s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2
-015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/201
-5/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on "Phase 1.pdf" (19 pages, 623751 bytes).
+ 62i,11n,58p,1333b,746s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+bx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
+i12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
+2.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.
+pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.p
+fb>
+Output written on "Phase 1.pdf" (21 pages, 673959 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
- 63 compressed objects within 1 object stream
+ 111 PDF objects out of 1000 (max. 8388607)
+ 67 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 48 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

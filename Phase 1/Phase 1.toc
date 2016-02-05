@@ -6,11 +6,11 @@
 \contentsline {subsection}{\numberline {2.4}Registered Users}{4}
 \contentsline {subsection}{\numberline {2.5}Rating}{6}
 \contentsline {subsection}{\numberline {2.6}Browsing}{7}
-\contentsline {subsection}{\numberline {2.7}Searching}{8}
+\contentsline {subsection}{\numberline {2.7}Searching}{10}
 \contentsline {subsection}{\numberline {2.8}Sale}{11}
-\contentsline {subsection}{\numberline {2.9}Bidding}{11}
+\contentsline {subsection}{\numberline {2.9}Bidding}{12}
 \contentsline {subsection}{\numberline {2.10}Order and Sale Reports}{13}
 \contentsline {subsection}{\numberline {2.11}Delivery}{13}
-\contentsline {subsection}{\numberline {2.12}Smart Car Finder}{13}
-\contentsline {subsection}{\numberline {2.13}Item Comparison}{14}
-\contentsline {section}{\numberline {3}Conceptual Design}{15}
+\contentsline {subsection}{\numberline {2.12}Smart Car Finder}{15}
+\contentsline {subsection}{\numberline {2.13}Item Comparison}{15}
+\contentsline {section}{\numberline {3}Conceptual Design}{17}

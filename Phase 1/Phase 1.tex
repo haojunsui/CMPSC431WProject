@@ -41,6 +41,7 @@
 \thispagestyle{empty}
 \newpage
 \tableofcontents
+\pagenumbering{roman}
 \setcounter{page}{1}
 \newpage
 \listoffigures
@@ -69,14 +70,15 @@ categorize an item as:
 \par The depth of the tree varies but is no more than ten levels deep.
 
 \subsection{Suppliers}
-In our case, supplier is the car seller. The attributes of supplier (dealer) are dealer name, address, phone number, type, and rating. The type attribute classifies supplier as car dealer and individual seller. The dname here is used as the primary ID and required to be unique. Phone numbers, rating, type, etc are attributes connected to each dealer. The rating is a weighted score calculated by buyer's (register user) rating on aspects like accuracy, price, choice, service, and feedback. Dealer will have an inventory. The relation is called owns and the entity is cars. The cars table is discussed in detail in the above sale items section. The dealer also has a relation named locates and the entity is address. The address we used here is zip code. Address is an important attribute in car shopping. People would prefer a dealer near their location so that they can go to store for a test drive and get car service there after the purchase. The address would be used in the search to decrease the scope. The reason we choose make ``address'' as an entity instead of an attribute is that we can use the similar schema for registered users. Figure \ref{fig:ERSupp} shows the ER diagram for Suppliers.\\
+In our case, supplier is the car seller. The attributes of supplier (dealer) are dealer name, address, phone number, type, account number, and rating. The type attribute classifies supplier as car dealer and individual seller. The dname here is used as the primary ID and required to be unique. Phone numbers, rating, type, etc are attributes connected to each dealer. The rating is a weighted score calculated by buyer's (register user) rating on aspects like accuracy, price, choice, service, and feedback. Dealer will have an inventory. The relation is called owns and the entity is cars. The cars table is discussed in detail in the above sale items section. The dealer also has a relation named locates and the entity is address. The address we used here is zip code. Address is an important attribute in car shopping. People would prefer a dealer near their location so that they can go to store for a test drive and get car service there after the purchase. The address would be used in the search to decrease the scope. The reason we choose make ``address'' as an entity instead of an attribute is that we can use the similar schema for registered users. Figure \ref{ERSupp} shows the ER diagram for Suppliers.
 \begin{figure}[!h]
-\caption{ER diagram for Suppliers.\label{fig:ERSupp}}
+\caption{ER diagram for Suppliers.\label{ERSupp}}
 \begin{center}
 \begin{tikzpicture}[node distance=1.5cm, every edge/.style={link}]
 	\node[entity] (dealer) {Dealers};
 	\node[attribute] (dealername) [left=of dealer] {\key{dname}} edge (dealer);
 	\node[attribute] (phone) [above=of dealer] {phone} edge (dealer);
+	\node[attribute] (account) [below left=of dealer] {account} edge (dealer);
 	\node[attribute] (rating) [right=of dealer] {rating} edge (dealer);
 
 	\node[relationship] (owns) [below=of dealer] {Owns} edge (dealer);
@@ -99,17 +101,59 @@ The registered users are the buyers who can buy or bid on an item (car). Buyer m
 \end{center}
 \end{figure}
 \par In addition, after registering a user can complete his or her whole profile by adding other information like age, gender and annual income. These attributes can be NULL if the user chooses not to fill.\par
-Register user also has a rating attribute. A new user has a rating of 0 to start with and recalculates his or her rating score after each successful business.
+Register user also has a rating attribute. A new user has a rating of 0 to start with and recalculates his or her rating score after each successful business. Figure \ref{ERUser} shows the ER diagram for registered users.
+\begin{figure}[!h]
+\caption{ER diagram for Registered Users.\label{ERUser}}
+\begin{center}
+\scalebox{.70}{
+\begin{tikzpicture}[node distance=1.5cm, every edge/.style={link}]
+	\node[entity] (user) {Users};
+	\node[attribute] (age) [left=of user] {Age} edge (user);
+	\node[attribute] (username) [above left=of age] {\key{username}} edge (user);
+	\node[attribute] (gender) [above left=of user] {Gender} edge (user);
+	\node[attribute] (password) [above right=of gender] {Password} edge (user);
+	\node[attribute] (income) [above right=of password] {Income} edge (user);
+	\node[attribute] (email) [above right=of user] {Email} edge (user);
+	
+	\node[relationship] (has) [below left=of user] {Has} edge (user);
+	
+	\node[entity] (phone) [left=of has] {Phones} edge (has);
+	\node[attribute] (pnumber) [below=of phone] {Phone number} edge (phone);
+	
+	\node[relationship] (pay) [below=of user] {Pays By} edge (user);
+	
+	\node[entity] (credit) [below=of pay] {Credit Cards} edge (pay);
+	\node[attribute] (exp) [left=of credit] {Expiration Date} edge (credit);
+	\node[attribute] (type) [below=of credit] {Type} edge (credit);
+	\node[attribute] (cnumber) [right=of credit] {Card Number} edge (credit);
+	
+	\node[relationship] (live) [right=of user] {Lives in} edge (user);
+	
+	\node[entity] (address) [right=of live] {Addresses} edge (live);
+	\node[attribute] (state) [above=of address] {State} edge (address);
+	\node[attribute] (city) [above right=of address] {City} edge (address);
+	\node[attribute] (street) [right=of address] {Street} edge (address);
+	\node[attribute] (zip) [below right=of address] {Zip} edge (address);
+	
+	\node[relationship] (use) [below right=of user] {Uses} edge (user);
+	
+	\node[entity] (name) [below right=of use] {Name} edge (use);
+	\node[attribute] (last) [right=of name] {Last} edge (name);
+	\node[attribute] (first) [below right=of name] {First} edge (name);
+\end{tikzpicture}
+}
+\end{center}
+\end{figure}
 
 \subsection{Rating}
-Each supplier and register user has a rating score to reflect their past business behavior with other users. For suppliers who sell cars on the website, the rating is an importing quality of them to help customers, the register users, to compare service and decide purchase decision. For register users who are customers or potential customer, the rating reflects if they pay on time and come back to the dealer for service. Mostly, the rating of supplier is more important but we would have rating for both supplier and register user.\par
-Each successful deal would allow one rating. Supplier and register user would rate each other on the scale of 1-10. Suppliers would be rated on the aspects of accuracy, price, choice, service, and feedback.\par
+Each supplier and register user has a rating score to reflect their past business behaviors with other users. For suppliers who sell cars on the website, the rating is an importing factor to help customers, the register users, to compare service quality and make purchase decision. For register users who are customers or potential customers, the rating reflects a general feedback from the car sellers and their punctuality of payment. Mostly, the rating of supplier is more important compared to that of user but we would have ratings for both supplier and register user.\par
+Each successful business would allow one rating. Supplier and register user would rate each other on the scale of 1-10. Suppliers would be rated on the aspects of accuracy, price, choice, service, and feedback.\par
 \begin{enumerate}
-\item Accuracy: if the information online the same as the real condition of the car.
-\item Price: Price is probably one of the most important factors for used car shopping. Is the price provided by the dealer competitive compared to others??
+\item Accuracy: If the information online the same as the real condition of the car.
+\item Price: Price is probably one of the most important factors for used car shopping. Is the price provided by the dealer competitive compared to others'?
 \item Choice: Does the dealer provide a lot of car choices?
-\item Service: Is the dealer profession, nice, and informative? Does the dealer respond your call and emails in a timely manner? Does the dealer call you way too frequently and become bothering?
-\item Feedback: The customer can add more feedback months or even years after the purchase. Is the car still working well after a year? For register user/buyer, the rating from supplier would be simpler. If the register users are new and did not purchase on the website before, they would have a 0 score. It would be the case for most of the register users, especially at the beginning of website operation. The register user would be rated on feedback and payment methods.
+\item Service: Is the dealer professional, nice, and informative? Does the dealer respond your call and emails in a timely manner? Does the dealer call you way too frequently and become bothering?
+\item Feedback: The customer can add more feedback months or even years after the purchase. Is the car still working well after a year? For register user/buyer, the rating from supplier would be simpler. If the register users are new and did not purchase on the website before, they would start with a score of 0. It would be the case for most of the register users, especially at the beginning of website operation. The register user would be rated on feedback and payment punctuality.
 \item Feedback: Is the register user a good and reasonable customer?
 \item Payment: Does the customer pay the rest of money on time? Does customer finish the loan at the end as planned?
 \end{enumerate}
@@ -144,10 +188,12 @@ All inventory pages have a vertical browse bar with all the attributes according
 \includegraphics[width=9cm]{vertical_bar}
 \end{center}
 \end{figure}
-\par The reason that it is on vertical and on the right is that user are not disturbed by drop-down menus and focus more one the content.\parEvery change of the drop-down menu will immediately execute a SQL instruction and bring the result to the page.
+\par The reason that it is on vertical and on the right is that user are not disturbed by drop-down menus and focus more one the content.\par
+Every change of the drop-down menu will immediately execute a SQL instruction and bring the result to the page.
 
 \subsection{Searching}
-Users are able to search the items by entering some keywords or conditions. As a search result, a list of items that satisfy the search criteria is returned to the users.Searching is another function to get quick access to the target item besides browsing. If a user has a specific car in mind, by using our search bar, he can filter out the non-matching records and gets the desired results directly from our database.\par
+Users are able to search the items by entering some keywords or conditions. As a search result, a list of items that satisfy the search criteria is returned to the users.
+Searching is another function to get quick access to the target item besides browsing. If a user has a specific car in mind, by using our search bar, he can filter out the non-matching records and gets the desired results directly from our database.\par
 \textbf{\underline{How it works}}\par
 User types a keyword in the search bar and hit enter to search. Website breaks the keyword into several words. The website will search the first word in all the related tables in our database, then search the next word in the result from last word searching.\par
 \textbf{\underline{Simplified Example}}\par
@@ -199,28 +245,35 @@ Up to 99.99 & 5\\ \hline
 \par The max bid is the maximum price a buyer is willing to pay for the item. The max bid is required to be at least one bid increment higher than the current price. When a buyer placed a max bid on an item, the current bid will raise only one bid increment. Buyer can raise the max bid any time during the auction. All the one-click-bids are visible to all the buyers, but max bids are only visible to the buyer who placed it. Buyer can retract his bid any time during the auction, and only if the bid is the highest bid at the moment, but leaving a record of retraction. After retraction, the highest bid placed by other buyer will be the current bid. When buyer A places a bid higher than the current bidding price, buyer B with that bid will be outbid, which means the buyer B will have to bid higher in order to win the item. If buyer B has a max bid, then the bid from buyer A may not be high enough to compete, then buyer A will be automatically outbid with a bid increment at the current bidding range. Buyer A will then place higher bids until the highest bid is lower than his max bid. The highest bid at the end of auction is called a winning bid, the buyer who placed the bid will be the winner of the auction. However, if the highest bid isn't higher than the reserve price, then the buyer isn't winning.
 
 \subsection{Order and Sale Reports}
-Every week, a report would be generated to summarize all the ordering and sale information happened in the past week. Table \ref{report_element} contains the order and report elements.
+Every week, a report would be generated to summarize all the sale and website traffic information happened in the past week. Table \ref{report_element} contains the order and report elements.
 \begin{table}[!h]
 \caption{Order and Report Elements}\label{report_element}
 \begin{center}
 \begin{tabular}{|c|c|}
 \hline
 Section & Elements\\ \hline
-\multirow{4}{*}{Order} & Total number of business transaction\\
-& Total number of car sold.\\
-& Total amount of sale figure(money).\\
-& Each number above divided by category of cars\\ \hline
+\multirow{3}{*}{Sale} & Total number of business transaction\\
+& Total number of car sold\\
+& Total amount of sale figure(money)\\ \hline
 \multirow{3}{*}{Traffic} & Total number of visits\\
-& Average pages' people viewed per visit\\
+& Pages viewed per visit\\
 & Average time spent per visit\\ \hline
 \multirow{3}{*}{Figure and Comparison} & 	Percentage of increment/decrement compared to last week\\
-& The area has the largest change\\
-& Visual representation \\ \hline
+& The category with the largest change\\
+& Visual representation of graphs and figures \\ \hline
 \end{tabular}
 \end{center}
 \end{table}
 
 \subsection{Delivery}
+After the buyer bought the vehicle from our website, two options of delivery will be offered. Buyer can drive to the dealer to pick up the vehicle, or he can use our insured and convenient delivery services. If the buyer chooses to pick up the vehicle, he will complete the paper work and pay the vehicle price in full excluding the deposit when he arrives in the dealer?s. Buyer may have a test drive with the car, but he can't retract the purchasing agreement consented on our website. In the worst case, if the buyer persists that he can't purchase the car, the buyer will be charged a penalty no more than 5\% of the final price.\par
+The vehicle delivery services we provide on our website are offered by two partner: the Nittany Auto Delivery, and Tennis Auto Delivery. Both our partners have strongly skilled drivers with sales skills, and their offices are located all over the country. If a buyer choose to get the vehicle via one of the delivery partners, he can expect the vehicle at his door after 3-7 business days upon clear payments. The charges of the delivery will be determined on the distance between the two destination and the type of the vehicle. The optional insurance on the auto delivery will be offered at buyer's expense. At the time when the car is delivered to the buyer, buyer will complete the payments as well as paperwork with the trusted driver from our partners. Figure \ref{delivery} shows shipping quotes from ebay.com.
+\begin{figure}[!h]
+\caption{Shipping quotes from ebay.com.} \label{delivery}
+\begin{center}
+\includegraphics[width=13cm]{delivery}
+\end{center}
+\end{figure}
 
 \subsection{Smart Car Finder}
 For user who do not have a target car in mind or do not have knowledge about cars, car find will give them recommendations according to their needs.\par
@@ -232,11 +285,12 @@ The questions in the survey are written in descriptive words instead of professi
 \subsection{Item Comparison}
 Since this is car purchasing, user probably need compare several cars to determine which one to buy. So compare function is very important for this project. After the user searching for what kinds of car he wants to buy, there will be a list of cars that satisfied his searching key word. Figure \ref{car_comparison} shows how Cars.com implements the same kind of feature.
 \begin{figure}[!h]
-\caption{Item Comparison Example.} \label{car_comparison}
+\caption{Car Comparison from Cars.com.} \label{car_comparison}
 \begin{center}
 \includegraphics[width=13cm]{car_comparison}
 \end{center}
 \end{figure}
+\par Then user can mark several cars as compare. On the top of website there will be a button ``compare''. By clicking this button the website will generated a table shows the data of the marked cars? entities.
 
 \newpage
 
