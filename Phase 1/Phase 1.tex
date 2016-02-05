@@ -53,6 +53,8 @@
 \pagenumbering{arabic}
 
 \section{Introduction}
+HelloWorld is a startup company that wants to pursue the opportunities of online business. We, team Big Leg Carry, have designed a database application for online Car shopping for HelloWorld. Users may log into our system by using registered user account or seller account. Registered users may easily search the kind of cars they want from search page, or they can fill out our quick survey to see what kind of cars suit their need. Users may compare different cars at the same time, if they are interested in multiple cars and have a hard time to choose the best one. Registered users may purchase a vehicle or place a bid on the vehicle. Once the transaction is confirmed, users can either choose to have vehicle delivered to them, or pick the vehicle themselves. Upon receiving the cars, users must finish the rest of the payment. Sellers can easily list the vehicles they want to sell from sellers' webpage. Both registered users and sellers can make rating on each other. We want such feature to maintain our friendly ecosystem. In order to fulfill these features, we define the following requirements.
+
 \newpage
 
 \section{Requirement Analysis}
@@ -80,7 +82,7 @@ In our case, supplier is the car seller. The attributes of supplier (dealer) are
 	\node[attribute] (phone) [above=of dealer] {phone} edge (dealer);
 	\node[attribute] (account) [below left=of dealer] {account} edge (dealer);
 	\node[attribute] (rating) [right=of dealer] {rating} edge (dealer);
-
+	
 	\node[relationship] (owns) [below=of dealer] {Owns} edge (dealer);
 
 	\node[entity] (car) [below=of owns] {Cars} edge (owns);
@@ -114,25 +116,26 @@ Register user also has a rating attribute. A new user has a rating of 0 to start
 	\node[attribute] (password) [above right=of gender] {Password} edge (user);
 	\node[attribute] (income) [above right=of password] {Income} edge (user);
 	\node[attribute] (email) [above right=of user] {Email} edge (user);
+	\node[attribute] (rating) [above=of gender] {Rating} edge (user);
 	
-	\node[relationship] (has) [below left=of user] {Has} edge (user);
+	\node[ident relationship] (has) [below left=of user] {Has} edge (user);
 	
-	\node[entity] (phone) [left=of has] {Phones} edge (has);
-	\node[attribute] (pnumber) [below=of phone] {Phone number} edge (phone);
+	\node[weak entity] (phone) [left=of has] {Phones} edge [total] (has);
+	\node[attribute] (pnumber) [below=of phone] {\discriminator{Phone number}} edge (phone);
 	
-	\node[relationship] (pay) [below=of user] {Pays By} edge (user);
+	\node[relationship] (pay) [below=of user] {Pays by} edge (user);
 	
-	\node[entity] (credit) [below=of pay] {Credit Cards} edge (pay);
+	\node[entity] (credit) [below=of pay] {Credit Cards} edge [total] (pay);
 	\node[attribute] (exp) [left=of credit] {Expiration Date} edge (credit);
 	\node[attribute] (type) [below=of credit] {Type} edge (credit);
-	\node[attribute] (cnumber) [right=of credit] {Card Number} edge (credit);
+	\node[attribute] (cnumber) [right=of credit] {\key{Card Number}} edge (credit);
 	
 	\node[relationship] (live) [right=of user] {Lives in} edge (user);
 	
-	\node[entity] (address) [right=of live] {Addresses} edge (live);
+	\node[entity] (address) [right=of live] {Addresses} edge [total] (live);
 	\node[attribute] (state) [above=of address] {State} edge (address);
 	\node[attribute] (city) [above right=of address] {City} edge (address);
-	\node[attribute] (street) [right=of address] {Street} edge (address);
+	\node[attribute] (street) [right=of address] {\key{Street}} edge (address);
 	\node[attribute] (zip) [below right=of address] {Zip} edge (address);
 	
 	\node[relationship] (use) [below right=of user] {Uses} edge (user);
@@ -161,7 +164,7 @@ Each successful business would allow one rating. Supplier and register user woul
 \subsection{Browsing}
 Browsing is one of the most important feature of a website, especially for a car selling website. It has great impact on user experience for the website, a good browsing feature can give user easy access to the target items, however, a bad browsing feature will prevent user from accessing the target items and sometimes even browse the wrong items.\par
 \textbf{\underline{How it works}}\par
-According to the input, using SQL to select proper table or a specific record. Users are able to browse the items bty traversing the category tree. At each point, they are given a summary of all the items that appear in that category.\par
+According to the input, using SQL to select proper table or a specific record. Users are able to browse the items by traversing the category tree. At each point, they are given a summary of all the items that appear in that category.\par
 \textbf{\underline{Design}}\par
 A good browning feature should have the following attributes:\par
 \begin{enumerate}
@@ -170,7 +173,7 @@ A good browning feature should have the following attributes:\par
 \item Quick response (well built database and proper SQL instructions)
 \end{enumerate}
 \par Browsing is usually done by a browsing bar. There are two types of browsing bar in our website: horizontal bar and vertical bar. Horizontal bar is on the top of the page and vertical bar (box) is on the right of the page.\par
-Horizontal bar consists of 3 buttons and 3 drop-down menus (See in Figure \ref{horBar}):
+Horizontal bar consists of 2 buttons and 3 drop-down menus (See in Figure \ref{horBar}):
 \begin{figure}[!h]
 \caption{Horizontal Bar Design.} \label{horBar}
 \begin{center}
@@ -178,9 +181,8 @@ Horizontal bar consists of 3 buttons and 3 drop-down menus (See in Figure \ref{h
 \end{center}
 \end{figure}
 \par On the main page, browsing bar is placed horizontally on top of the page which is a striking position. By doing this, it provides easy access for users to browse our inventory right after they enter the website.\par
-New Car button and Used Car button: For users who do not have a target car to buy, take users to the new/used car page with our full new/used car inventory.\par
-SELL YOURS button: Take user to sell page.\par
-Drop-down menus: For users who have a target car in mind. First, select make of the car and then select model will take them to the result selected from our database according to the given input. Or users can browse the car by type (sedan, coupe, SUV, other), and jump to the result page with cars of that type.\par
+\underline{New Car button and Used Car button:} User can select New car, used car, or both to browse our inventory. User can combine buttons with drop-down menus to filter out undesired results. Results will be displayed after button selection.\par
+\underline{Drop-down menus:} For users who have a target car in mind. First, select make of the car and then select model will take them to the result selected from our database according to the given input. Or users can browse the car by type (sedan, coupe, SUV, other), and jump to the result page with cars of that type.\par
 All inventory pages have a vertical browse bar with all the attributes according to previous input (new/used/type...) Figure \ref{verBar} shows the design of the vertical bar.
 \begin{figure}[!h]
 \caption{Vertical Bar Design.} \label{verBar}
@@ -295,5 +297,68 @@ Since this is car purchasing, user probably need compare several cars to determi
 \newpage
 
 \section{Conceptual Design}
+Figure \ref{ERCom} shows the complete ER diagram design of our database application.
+\begin{figure}[!h]
+\caption{Complete ER diagram Design.\label{ERCom}}
+\begin{center}
+\scalebox{.55}{
+\begin{tikzpicture}[node distance=1.5cm, every edge/.style={link}]
+	\node[entity] (user) {Users};
+	\node[attribute] (age) [left=of user] {Age} edge (user);
+	\node[attribute] (username) [above left=of age] {\key{username}} edge (user);
+	\node[attribute] (gender) [above left=of user] {Gender} edge (user);
+	\node[attribute] (password) [above right=of gender] {Password} edge (user);
+	\node[attribute] (income) [above right=of password] {Income} edge (user);
+	\node[attribute] (email) [above right=of user] {Email} edge (user);
+	\node[attribute] (rating) [above=of gender] {Rating} edge (user);
+	
+	\node[ident relationship] (has) [below left=of user] {Has} edge (user);
+	
+	\node[weak entity] (phone) [left=of has] {Phones} edge [total] (has);
+	\node[attribute] (pnumber) [below=of phone] {\discriminator{Phone number}} edge (phone);
+	
+	\node[relationship] (pay) [below=of user] {Pays by} edge (user);
+	
+	\node[entity] (credit) [below=of pay] {Credit Cards} edge [total] (pay);
+	\node[attribute] (exp) [below right=of credit] {Expiration Date} edge (credit);
+	\node[attribute] (type) [below=of credit] {Type} edge (credit);
+	\node[attribute] (cnumber) [right=of credit] {\key{Card Number}} edge (credit);
+	
+	\node[relationship] (live) [right=of user] {Lives in} edge (user);
+	
+	\node[entity] (address) [right=of live] {Addresses} edge [total] (live);
+	\node[attribute] (state) [above=of address] {State} edge (address);
+	\node[attribute] (city) [above right=of address] {City} edge (address);
+	\node[attribute] (street) [right=of address] {\key{Street}} edge (address);
+	\node[attribute] (zip) [below right=of address] {Zip} edge (address);
+	
+	\node[relationship] (use) [below=of has] {Uses} edge (user);
+	
+	\node[entity] (name) [below left=of use] {Name} edge (use);
+	\node[attribute] (last) [left=of name] {Last} edge (name);
+	\node[attribute] (first) [below=of name] {First} edge (name);
+	
+	\node[relationship] (bid) [above right=of credit] {Bids on} edge (user);
+	\node[relationship] (buy) [above right=of bid] {Buys} edge (user);
+	
+	\node[entity] (car) [right=of bid] {Cars} edge (bid) edge (buy);
+	
+	\node[relationship] (locate) [right=of car] {Locates} edge [total] (address);
+	
+	\node[entity] (dealer) [below right=of locate] {Dealers} edge (locate);
+	\node[attribute] (dealername) [below=of dealer] {\key{dname}} edge (dealer);
+	\node[attribute] (phone) [above=of dealer] {phone} edge (dealer);
+	\node[attribute] (account) [below left=of dealer] {account} edge (dealer);
+	\node[attribute] (rating) [right=of dealer] {rating} edge (dealer);
+	
+	\node[relationship] (own) [below right=of car] {Owns} edge [<-] (car) edge (dealer);
+	\node[attribute] (status) [below left=of account] {Status} edge (own);
+	\node[attribute] (start) [below=of exp] {Start Time} edge (own);
+	\node[attribute] (type) [below=of start] {Type} edge (own);
+\end{tikzpicture}
+}
+\end{center}
+\end{figure}
+\par As the graphs shows, each user will be identified by their username, and each sellers will be identified by his \emph{dname}. We define one weak entity set for users since we don't need to store users' phone number if they decide to deactivate their account. Cars can only be owned by a unique seller, which means no multiple sellers sell the same car. As credit card maybe used by other people, we will not make credit card as a weak entity set.
 
 \end{document}
