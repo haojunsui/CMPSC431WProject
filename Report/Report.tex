@@ -936,18 +936,50 @@ CREATE TABLE Comment (username			CHAR (20),                      dname				CHAR 
 \end{verbatim}
 
 \section{Technology Survey}
-\par At first we were looking for a language, which was `one for all' type. We want to find a language such that it could fit every needs of our design. However, this is impossible. From our research 
-
+\par For front end, we want to choose between Relational SQL database (MySQL) and NoSQL database (MongoDB). When compared to relational databases, NoSQL databases are more scalable. They support large volumes of rapidly changing data. Also, NoSQL databases are built to allow the insertion of data without a predefined schema. This saves the development time from migrating databases due to changes in schema. Since during the design phase, we changed a lot in our schema, we decided to use NoSQL for our database design.
+\par For back end, we want to use something that's simple to program and also natively support NoSQL databases, such as MongoDB. PHP is now a widespread, well known "mainstream" technology, and also quite cheap to host and easily deployable. Also, PHP drops right into HTML code. Due to the program simplicity, we choose PHP as our back end language.
 
 \section{Populate Data for Database}
-We get 100 cars' data, including 50 items to be auctioned and 50 direct sale items to be sold directly from the Edmunds.com API.
-
-
-
-
-
-
-
+\par We get 100 cars' data, including 50 items to be auctioned and 50 direct sale items to be sold directly from the Edmunds.com API.
+\par We get data by calling, for example:
+\par https://api.edmunds.com/api/vehicle/v2/makes?fmt=json\&api\_key=\par\{ cfj4zt9xwecz4wzhv3zr8yev \}
+\par Figure \ref{api_car} shows the response of an example API call.
+\begin{figure}[!h]
+\caption{Response of an Example API Call} \label{api_car}
+\begin{center}
+\includegraphics[width=13cm]{api_car}
+\end{center}
+\end{figure}
+\par We get the user data from the Fake Name API by calling:
+\par https://v5.fakenameapi.com/generate
+\par Figure \ref{api_name} shows the sample response.
+\begin{figure}[!h]
+\caption{Response of Sample Response} \label{api_name}
+\begin{center}
+\includegraphics[width=13cm]{api_name}
+\end{center}
+\end{figure}
+\par Then we further select the attributes that we need and store them in local files.
+\par Figure \ref{attributes} shows the stored attributes. Figure \ref{users} shows the stored user information.
+\begin{figure}[!h]
+\caption{Stored Attributes} \label{attributes}
+\begin{center}
+\includegraphics[width=\textwidth]{attributes}
+\end{center}
+\end{figure}
+\begin{figure}[!h]
+\caption{Stored User Information} \label{users}
+\begin{center}
+\includegraphics[width=\textwidth]{users}
+\end{center}
+\end{figure}
+\par Our category tree starts with car as root. The root has three children: New, Used, Certified Pre-Owned. Then each child is divided by Make, like Mazda, Audi, etc.; and then further divided by Mode, like Mazda3, Mazda5, Mazda6, etc. Figure \ref{category_tree} shows the category tree.
+\begin{figure}[!h]
+\caption{Category Tree} \label{category_tree}
+\begin{center}
+\includegraphics[width=\textwidth]{category_tree}
+\end{center}
+\end{figure}
 
 
 
