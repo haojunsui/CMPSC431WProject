@@ -14,3 +14,10 @@
 \contentsline {subsection}{\numberline {2.12}Smart Car Finder}{15}
 \contentsline {subsection}{\numberline {2.13}Item Comparison}{15}
 \contentsline {section}{\numberline {3}Conceptual Design}{17}
+\contentsline {section}{\numberline {4}Data Schema}{18}
+\contentsline {subsection}{\numberline {4.1}Original Schema}{18}
+\contentsline {subsection}{\numberline {4.2}Schema Refinement}{19}
+\contentsline {subsection}{\numberline {4.3}Schema Normalization}{22}
+\contentsline {section}{\numberline {5}SQL Statements}{34}
+\contentsline {section}{\numberline {6}Technology Survey}{38}
+\contentsline {section}{\numberline {7}Populate Data for Database}{38}

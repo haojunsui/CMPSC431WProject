@@ -9,6 +9,8 @@
 \usepackage{graphicx}
 \graphicspath{{../Figures/}}
 \usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{colortbl}
 
 \tikzstyle{every entity} = []
 \tikzstyle{every weak entity} = []
@@ -361,6 +363,599 @@ Figure \ref{ERCom} shows the complete ER diagram design of our database applicat
 \end{center}
 \end{figure}
 \par As the graphs shows, each user will be identified by their username, and each sellers will be identified by his \emph{dname}. We define one weak entity set for users since we don't need to store users' phone number if they decide to deactivate their account. Cars can only be owned by a unique seller, which means no multiple sellers sell the same car. As credit card maybe used by other people, we will not make credit card as a weak entity set.
+
+\section{Data Schema}
+\subsection{Original Schema}
+\begin{center}
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|X|}
+\hline
+\multicolumn{6}{|c|}{Users}\\\hline
+\underline{username} & email & age & rating & password & income\\\hline
+\end{tabularx}
+~\\~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+\multicolumn{4}{|c|}{Credit Cards}\\\hline
+\underline{username} & card number & expiration date & type\\\hline
+\end{tabularx}
+~\\~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+\hline
+\multicolumn{5}{|c|}{User Addresses}\\\hline
+\underline{username} & state & city & street & zip\\\hline
+\end{tabularx}
+~\\~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+\multicolumn{4}{|c|}{Dealers}\\\hline
+\underline{dname} & account & phone & rating\\\hline
+\end{tabularx}
+~\\~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+\hline
+\multicolumn{5}{|c|}{Owns}\\\hline
+\underline{dname} & vin & start time & type & status\\\hline
+\end{tabularx}
+~\\~\\
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+\multicolumn{2}{|c|}{Phones}\\\hline
+\underline{username} & phone number\\\hline
+\end{tabularx}
+~\\~\\
+\begin{tabularx}{\textwidth}{|X|X|X|}
+\hline
+\multicolumn{3}{|c|}{Name}\\\hline
+\underline{username} & last name & first name\\\hline
+\end{tabularx}
+~\\~\\
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+\multicolumn{2}{|c|}{Cars}\\\hline
+\underline{vin} & attributes...\footnote{year, mileage, make, model, body type, fuel, exterior color, interior color, drivetrain, transmission, engine, condition}\\\hline
+\end{tabularx}
+~\\~\\
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+\multicolumn{2}{|c|}{Buys}\\\hline
+\underline{username} & vin\\\hline
+\end{tabularx}
+~\\~\\
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+\multicolumn{2}{|c|}{Bids}\\\hline
+\underline{username} & vin\\\hline
+\end{tabularx}
+~\\~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+\hline
+\multicolumn{5}{|c|}{Dealer Addresses}\\\hline
+\underline{dname} & state & city & street & zip\\\hline
+\end{tabularx}
+\end{center}
+
+\subsection{Schema Refinement}
+\par Everything in green are the changes and updates, and everything in red are the objects to be removed.\\\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|X|X|X|X|X|X|}
+\hline
+\multicolumn{11}{|c|}{User}\\\hline
+\scriptsize \underline{user-} \underline{-name} & \scriptsize email & \scriptsize\cellcolor{green!25}dob & \scriptsize rating & \scriptsize pwd & \scriptsize income & \scriptsize\cellcolor{green!25} phone1 & \scriptsize\cellcolor{green!25} phone2 & \scriptsize\cellcolor{green!25} last name & \scriptsize\cellcolor{green!25} first name & \scriptsize\cellcolor{green!25} address id\\\hline
+\end{tabularx}
+~\\
+\par Instead of AGE, we have dob here so that we don't need to update user age every year. Addressid refers to the primary key in the Table Addresses to determine user's address. Table Phones is removed since we find it better as user attribute. Table Name is removed, and the last name and first name are added as user attributes.\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+\multicolumn{4}{|c|}{Credit Cards}\\\hline
+\underline{username} & card number & expiration date & type\\\hline
+\end{tabularx}
+~\\~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+\hline
+\multicolumn{5}{|c|}{\cellcolor{green!25}Addresses}\\\hline
+\underline{address id} & \cellcolor{red!25}zip & street & city & state\\\hline
+\end{tabularx}
+~\\
+\par We have combined the two tables of the User Addresses, and the Dealer Addresses into one table named Addresses. Addressed is the primary key of the Table. Zip can be determined by city and state. But city or state cannot be determined only by zip, example, 42223 can be Kentucky or Tennessee. And for city Gainesville, it can be in FL or VA (2 cities in different state named Gainesville).\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+\hline
+\multicolumn{5}{|c|}{Dealers}\\\hline
+\underline{dname} & account & phone & rating & \cellcolor{green!25}address id\\\hline
+\end{tabularx}
+~\\
+\par Addressid refers to the primary key in the Table Addresses to determine dealer?s address.\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+\hline
+\multicolumn{5}{|c|}{Owns}\\\hline
+\underline{dname} & vin & start time & type & status\\\hline
+\end{tabularx}
+~\\~\\
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+\multicolumn{2}{|c|}{\cellcolor{red!25}Phones}\\\hline
+\cellcolor{red!25}\underline{username} & \cellcolor{red!25}phone number\\\hline
+\end{tabularx}
+~\\
+\par This table is removed; such entity has been added to table User as attribute.\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|X|}
+\hline
+\multicolumn{3}{|c|}{\cellcolor{red!25}Name}\\\hline
+\cellcolor{red!25}\underline{username} & \cellcolor{red!25}last name & \cellcolor{red!25}first name\\\hline
+\end{tabularx}
+~\\
+\par This table is removed; such entity has been added to table User as attribute.\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+\multicolumn{2}{|c|}{Cars}\\\hline
+\underline{vin} & attributes...\footnote{year, mileage, make, model, body type, fuel, exterior color, interior color, drivetrain, transmission, engine, condition}\\\hline
+\end{tabularx}
+~\\~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+\multicolumn{4}{|c|}{Buys}\\\hline
+\underline{username} & \underline{vin} & \cellcolor{green!25}price & \cellcolor{green!25}time\\\hline
+\end{tabularx}
+~\\
+\par Price and time are added as attributes to the buying process.\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+\multicolumn{2}{|c|}{\cellcolor{red!25}Bids}\\\hline
+\cellcolor{red!25}\underline{username} & \cellcolor{red!25}vin\\\hline
+\end{tabularx}
+~\\
+\par Table Bidding replaces the table Bids.\\
+~\\~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+\hline
+\multicolumn{5}{|c|}{\cellcolor{red!25}Dealer Addresses}\\\hline
+\cellcolor{red!25}\underline{dname} & \cellcolor{red!25}state & \cellcolor{red!25}city & \cellcolor{red!25}street & \cellcolor{red!25}zip\\\hline
+\end{tabularx}
+~\\
+\par Table Dealer is removed, and it is merged into the Addresses table.\\
+~\\~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+\multicolumn{4}{|c|}{\cellcolor{green!25}Bidding}\\\hline
+\cellcolor{green!25}\underline{vin} & \cellcolor{green!25}price & \cellcolor{green!25}time & \cellcolor{green!25}\underline{username}\\\hline
+\end{tabularx}
+~\\
+\par Bidding table is created to reflect the bidding activities. The primary key is `vin, username', since each user can only have one bidding value stored for each car.\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+\multicolumn{4}{|c|}{\cellcolor{green!25}Comments}\\\hline
+\cellcolor{green!25}\underline{username} & \cellcolor{green!25}\underline{dname} & \cellcolor{green!25}comment & \cellcolor{green!25}date\\\hline
+\end{tabularx}
+~\\
+\par Comment table is added to meet the requirement of having 5 or more comment for a dealer. User can comment on a dealer only once but can comment on multiple dealers. User cannot comment on user. Dealers cannot comment on dealer or user.
+\subsection{Schema Normalization}
+\par \textbf{\underline{Reducing to First Normal Form}}
+\par To be in first normal form, A relation is in first normal form if and only if the domain of each attribute contains only atomic(indivisible) values, and the value of each attribute contains only a single value from that domain.\\\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|X|X|X|X|X|X|}
+\hline
+\multicolumn{11}{|c|}{User}\\\hline
+\scriptsize \underline{user-} \underline{-name} & \scriptsize email & \scriptsize\cellcolor{green!25}dob & \scriptsize rating & \scriptsize pwd & \scriptsize income & \scriptsize\cellcolor{green!25} phone1 & \scriptsize\cellcolor{green!25} phone2 & \scriptsize\cellcolor{green!25} last name & \scriptsize\cellcolor{green!25} first name & \scriptsize\cellcolor{green!25} address id\\\hline
+\end{tabularx}
+~\\
+\par The domain of each attribute contains only atomic(indivisible) values\hfill $\rightarrow$check!
+\par Value of each attribute contains only a single value from that domain\hfill $\rightarrow$check!\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+\multicolumn{4}{|c|}{Credit Cards}\\\hline
+\underline{username} & card number & expiration date & type\\\hline
+\end{tabularx}
+~\\
+\par The domain of each attribute contains only atomic(indivisible) values\hfill $\rightarrow$check!
+\par Value of each attribute contains only a single value from that domain\hfill $\rightarrow$check!\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+\multicolumn{4}{|c|}{\cellcolor{green!25}Addresses}\\\hline
+\underline{address id} & street & city & state\\\hline
+\end{tabularx}
+~\\
+\par The domain of each attribute contains only atomic(indivisible) values\hfill $\rightarrow$check!
+\par Value of each attribute contains only a single value from that domain\hfill $\rightarrow$check!\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+\hline
+\multicolumn{5}{|c|}{Dealers}\\\hline
+\underline{dname} & account & phone & rating & \cellcolor{green!25}address id\\\hline
+\end{tabularx}
+~\\
+\par The domain of each attribute contains only atomic(indivisible) values\hfill $\rightarrow$check!
+\par Value of each attribute contains only a single value from that domain\hfill $\rightarrow$check!\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+\hline
+\multicolumn{5}{|c|}{Owns}\\\hline
+\underline{dname} & vin & start time & type & status\\\hline
+\end{tabularx}
+~\\
+\par The domain of each attribute contains only atomic(indivisible) values\hfill $\rightarrow$check!
+\par Value of each attribute contains only a single value from that domain\hfill $\rightarrow$check!\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+\multicolumn{2}{|c|}{Cars}\\\hline
+\underline{vin} & attributes...\footnote{year, mileage, make, model, body type, fuel, exterior color, interior color, drivetrain, transmission, engine, condition}\\\hline
+\end{tabularx}
+~\\
+\par The domain of each attribute contains only atomic(indivisible) values\hfill $\rightarrow$check!
+\par Value of each attribute contains only a single value from that domain\hfill $\rightarrow$check!\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+\multicolumn{4}{|c|}{Buys}\\\hline
+\underline{username} & \underline{vin} & \cellcolor{green!25}price & \cellcolor{green!25}time\\\hline
+\end{tabularx}
+~\\
+\par The domain of each attribute contains only atomic(indivisible) values\hfill $\rightarrow$check!
+\par Value of each attribute contains only a single value from that domain\hfill $\rightarrow$check!\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+\multicolumn{4}{|c|}{\cellcolor{green!25}Bidding}\\\hline
+\cellcolor{green!25}\underline{vin} & \cellcolor{green!25}price & \cellcolor{green!25}time & \cellcolor{green!25}\underline{username}\\\hline
+\end{tabularx}
+~\\
+\par The domain of each attribute contains only atomic(indivisible) values\hfill $\rightarrow$check!
+\par Value of each attribute contains only a single value from that domain\hfill $\rightarrow$check!\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+\multicolumn{4}{|c|}{\cellcolor{green!25}Comments}\\\hline
+\cellcolor{green!25}\underline{username} & \cellcolor{green!25}\underline{dname} & \cellcolor{green!25}comment & \cellcolor{green!25}date\\\hline
+\end{tabularx}
+~\\
+\par The domain of each attribute contains only atomic(indivisible) values\hfill $\rightarrow$check!
+\par Value of each attribute contains only a single value from that domain\hfill $\rightarrow$check!\\
+
+\par \textbf{\underline{Reducing to Second Normal Form}}
+\par To be in second normal form, A table is in second normal form if it is in first normal form and every non-prime attribute of the table is dependent on the whole of every candidate key.\\\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|X|X|X|X|X|X|}
+\hline
+\multicolumn{11}{|c|}{User}\\\hline
+\scriptsize \underline{user-} \underline{-name} & \scriptsize email & \scriptsize\cellcolor{green!25}dob & \scriptsize rating & \scriptsize pwd & \scriptsize income & \scriptsize\cellcolor{green!25} phone1 & \scriptsize\cellcolor{green!25} phone2 & \scriptsize\cellcolor{green!25} last name & \scriptsize\cellcolor{green!25} first name & \scriptsize\cellcolor{green!25} address id\\\hline
+\end{tabularx}
+~\\~\\
+\par In first normal form\hfill$\rightarrow$check!
+\par Non-prime attribute of the table is dependent on the whole of candidate key\hfill$\rightarrow$check!
+\par(Username $\rightarrow$ email, dob, rating, pwd, income, phone, lastname, firstname, address id)\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+\multicolumn{4}{|c|}{Credit Cards}\\\hline
+\underline{username} & card number & expiration date & type\\\hline
+\end{tabularx}
+~\\~\\
+\par In first normal form\hfill$\rightarrow$check!
+\par Non-prime attribute of the table is dependent on the whole of candidate key\hfill$\rightarrow$check!
+\par (Username $\rightarrow$ card number, expiration date, type)\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+\multicolumn{4}{|c|}{\cellcolor{green!25}Addresses}\\\hline
+\underline{address id} & street & city & state\\\hline
+\end{tabularx}
+~\\~\\
+\par In first normal form\hfill$\rightarrow$check!
+\par Non-prime attribute of the table is dependent on the whole of candidate key\hfill$\rightarrow$check!
+\par (address id $\rightarrow$ street, city, state)\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+\hline
+\multicolumn{5}{|c|}{Dealers}\\\hline
+\underline{dname} & account & phone & rating & \cellcolor{green!25}address id\\\hline
+\end{tabularx}
+~\\~\\
+\par In first normal form\hfill$\rightarrow$check!
+\par Non-prime attribute of the table is dependent on the whole of candidate key\hfill$\rightarrow$check!
+\par (dname $\rightarrow$ account, phone, rating, address id)\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+\hline
+\multicolumn{5}{|c|}{Owns}\\\hline
+\underline{dname} & vin & start time & type & status\\\hline
+\end{tabularx}
+~\\~\\~\\
+\par In first normal form\hfill$\rightarrow$check!
+\par \textcolor{red}{Non-prime attribute of the table is dependent on the \underline{whole of candidate key}\hfill$\rightarrow$Uncheck!}
+\par We put startTime, type, status into cars table, as attributes. Now, Owns table changes into:\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+\multicolumn{2}{|c|}{Owns}\\\hline
+\underline{vin} & dname\\\hline
+\end{tabularx}
+~\\~\\
+\par Non-prime attribute of the table is dependent on the whole of candidate key\hfill$\rightarrow$check!
+\par (vin $\rightarrow$ dname)\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+\multicolumn{2}{|c|}{Cars}\\\hline
+\underline{vin} & attributes...\footnote{year, mileage, make, model, body type, fuel, exterior color, interior color, drivetrain, transmission, engine, condition}\\\hline
+\end{tabularx}
+~\\~\\
+\par In first normal form\hfill$\rightarrow$check!
+\par Non-prime attribute of the table is dependent on the whole of candidate key\hfill$\rightarrow$check!
+\par (vin $\rightarrow$ attributes)\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+\multicolumn{4}{|c|}{Buys}\\\hline
+\underline{username} & \underline{vin} & \cellcolor{green!25}price & \cellcolor{green!25}time\\\hline
+\end{tabularx}
+~\\~\\
+\par In first normal form\hfill$\rightarrow$check!
+\par Non-prime attribute of the table is dependent on the whole of candidate key\hfill$\rightarrow$check!
+\par (username $\rightarrow$ vin, price, time)\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+\multicolumn{4}{|c|}{\cellcolor{green!25}Bidding}\\\hline
+\cellcolor{green!25}\underline{vin} & \cellcolor{green!25}price & \cellcolor{green!25}time & \cellcolor{green!25}\underline{username}\\\hline
+\end{tabularx}
+~\\~\\
+\par In first normal form\hfill$\rightarrow$check!
+\par Non-prime attribute of the table is dependent on the whole of candidate key\hfill$\rightarrow$check!
+\par (vin, username $\rightarrow$ price, time)\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+\multicolumn{4}{|c|}{\cellcolor{green!25}Comments}\\\hline
+\cellcolor{green!25}\underline{username} & \cellcolor{green!25}\underline{dname} & \cellcolor{green!25}comment & \cellcolor{green!25}date\\\hline
+\end{tabularx}
+~\\~\\
+\par In first normal form\hfill$\rightarrow$check!
+\par Non-prime attribute of the table is dependent on the whole of candidate key\hfill$\rightarrow$check!
+\par (username, dname $\rightarrow$ comment, date)\\
+
+\par \textbf{\underline{Reducing to Third Normal Form}}
+\par To be in third normal form, the entity is in second normal form, and all the attributes in a table are determined only by the candidate keys of that table and not by any non-prime attributes.\\\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|X|X|X|X|X|X|}
+\hline
+\multicolumn{11}{|c|}{User}\\\hline
+\scriptsize \underline{user-} \underline{-name} & \scriptsize email & \scriptsize\cellcolor{green!25}dob & \scriptsize rating & \scriptsize pwd & \scriptsize income & \scriptsize\cellcolor{green!25} phone1 & \scriptsize\cellcolor{green!25} phone2 & \scriptsize\cellcolor{green!25} last name & \scriptsize\cellcolor{green!25} first name & \scriptsize\cellcolor{green!25} address id\\\hline
+\end{tabularx}
+~\\~\\~\\
+\par The entity is in second normal form\hfill $\rightarrow$check!
+\par \textcolor{red}{All the attributes in a table are determined only by the candidate keys of that table and not by any non-prime attributes.\hfill $\rightarrow$Uncheck!}
+\par Since email is unique, it can be used to determine the following attributes just like username. Hence we decompose the User table into 2 table.\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|X|X|X|X|X|}
+\hline
+\multicolumn{10}{|c|}{User}\\\hline
+\scriptsize \underline{user-} \underline{-name} & \scriptsize\cellcolor{green!25}dob & \scriptsize rating & \scriptsize pwd & \scriptsize income & \scriptsize\cellcolor{green!25} phone1 & \scriptsize\cellcolor{green!25} phone2 & \scriptsize\cellcolor{green!25} last name & \scriptsize\cellcolor{green!25} first name & \scriptsize\cellcolor{green!25} address id\\\hline
+\end{tabularx}
+~\\~\\
+\par The entity is in second normal form\hfill $\rightarrow$check!
+\par All the attributes in a table are determined only by the candidate keys of that table and not by any non-prime attributes.\hfill $\rightarrow$check!\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+\multicolumn{2}{|c|}{Register}\\\hline
+\underline{username} & email\\\hline
+\end{tabularx}
+~\\
+\par The entity is in second normal form\hfill $\rightarrow$check!
+\par All the attributes in a table are determined only by the candidate keys of that table and not by any non-prime attributes.\hfill $\rightarrow$check!
+\par (username $\rightarrow$ email)\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+\multicolumn{4}{|c|}{Credit Cards}\\\hline
+\underline{username} & card number & expiration date & type\\\hline
+\end{tabularx}
+~\\~\\
+\par The entity is in second normal form\hfill $\rightarrow$check!
+\par \textcolor{red}{All the attributes in a table are determined only by the candidate keys of that table and not by any non-prime attributes.\hfill $\rightarrow$Uncheck!}
+\par Since card Number can determine expiration date and type, and card number is a non-prime attributes. It is not in third normal form. We decompose it into two tables:\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|X|}
+\hline
+\multicolumn{3}{|c|}{Credit Cards}\\\hline
+\underline{card number} & expiration date & type\\\hline
+\end{tabularx}
+~\\~\\
+\par The entity is in second normal form\hfill $\rightarrow$check!
+\par All the attributes in a table are determined only by the candidate keys of that table and not by any non-prime attributes.\hfill $\rightarrow$check!\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+\multicolumn{2}{|c|}{Payment}\\\hline
+\underline{username} & card number\\\hline
+\end{tabularx}
+~\\~\\
+\par The entity is in second normal form\hfill $\rightarrow$check!
+\par All the attributes in a table are determined only by the candidate keys of that table and not by any non-prime attributes.\hfill $\rightarrow$check!\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+\multicolumn{4}{|c|}{\cellcolor{green!25}Addresses}\\\hline
+\underline{address id} & street & city & state\\\hline
+\end{tabularx}
+~\\~\\
+\par The entity is in second normal form\hfill $\rightarrow$check!
+\par All the attributes in a table are determined only by the candidate keys of that table and not by any non-prime attributes.\hfill $\rightarrow$check!\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+\hline
+\multicolumn{5}{|c|}{Dealers}\\\hline
+\underline{dname} & account & phone & rating & \cellcolor{green!25}address id\\\hline
+\end{tabularx}
+~\\~\\
+\par The entity is in second normal form\hfill $\rightarrow$check!
+\par All the attributes in a table are determined only by the candidate keys of that table and not by any non-prime attributes.\hfill $\rightarrow$check!\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+\hline
+\multicolumn{5}{|c|}{Owns}\\\hline
+\underline{dname} & vin & start time & type & status\\\hline
+\end{tabularx}
+~\\~\\
+\par The entity is in second normal form\hfill $\rightarrow$check!
+\par All the attributes in a table are determined only by the candidate keys of that table and not by any non-prime attributes.\hfill $\rightarrow$check!\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|}
+\hline
+\multicolumn{2}{|c|}{Cars}\\\hline
+\underline{vin} & attributes...\footnote{year, mileage, make, model, body type, fuel, exterior color, interior color, drivetrain, transmission, engine, condition}\\\hline
+\end{tabularx}
+~\\~\\
+\par The entity is in second normal form\hfill $\rightarrow$check!
+\par All the attributes in a table are determined only by the candidate keys of that table and not by any non-prime attributes.\hfill $\rightarrow$check!\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+\multicolumn{4}{|c|}{Buys}\\\hline
+\underline{username} & \underline{vin} & \cellcolor{green!25}price & \cellcolor{green!25}time\\\hline
+\end{tabularx}
+~\\~\\
+\par The entity is in second normal form\hfill $\rightarrow$check!
+\par All the attributes in a table are determined only by the candidate keys of that table and not by any non-prime attributes.\hfill $\rightarrow$check!\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+\multicolumn{4}{|c|}{\cellcolor{green!25}Bidding}\\\hline
+\cellcolor{green!25}\underline{vin} & \cellcolor{green!25}price & \cellcolor{green!25}time & \cellcolor{green!25}\underline{username}\\\hline
+\end{tabularx}
+~\\~\\
+\par The entity is in second normal form\hfill $\rightarrow$check!
+\par All the attributes in a table are determined only by the candidate keys of that table and not by any non-prime attributes.\hfill $\rightarrow$check!\\
+~\\
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+\multicolumn{4}{|c|}{\cellcolor{green!25}Comments}\\\hline
+\cellcolor{green!25}\underline{username} & \cellcolor{green!25}\underline{dname} & \cellcolor{green!25}comment & \cellcolor{green!25}date\\\hline
+\end{tabularx}
+~\\~\\
+\par The entity is in second normal form\hfill $\rightarrow$check!
+\par All the attributes in a table are determined only by the candidate keys of that table and not by any non-prime attributes.\hfill $\rightarrow$check!
+
+\section{SQL Statements}
+\begin{verbatim}
+CREATE TABLE Users (username			CHAR (20),
+                    AddressID			CHAR (20),
+                    Password			CHAR (20),
+                    Dob				CHAR (8),
+                    Income				INTEGER,
+                    Age				INTEGER,
+                    Phone1				CHAR (10),
+                    Phone2				CHAR (10),
+                    Gender				CHAR (6),
+                    Rating				INTEGER,
+                    Last_name			CHAR (20),
+                    First_name			CHAR (20),
+                    PRIMARY KEY (username)
+                    FOREIGN KEY (AddressID) REFERENCE Address (AddressID));
+
+CREATE TABLE Register (username				CHAR (20),
+                       Email				CHAR (50),
+                       UNIQUE (Email),
+                       FOREIGN KEY (username) REFERENCE User (username));
+                       
+CREATE TABLE Credit_Card (Card_No		CHAR (12),
+                          Exp_date		TIMESTAMP,
+                          Type			CHAR (20),
+                          PRIMARY KEY (Card_No));
+
+CREATE TABLE Payment (username			CHAR (20),
+                      Card_No			CHAR (12),
+                      FOREIGN KEY (username) REFERENCE Users (username),
+                      FOREIGN KEY (Card_No) REFERENCE Credit_Card (Card_No),
+                      ON DELETE CASCADE);
+
+CREATE TABLE Address (AddressID			CHAR (20),
+                      State				CHAR (20),
+                      City				CHAR (20),
+                      Street			CHAR (100),
+                      PRIMARY KEY (AddressID));
+
+CREATE TABLE Dealers (dname				CHAR (50),
+                      Account			CHAR (20),
+                      Rating			INTEGER,
+                      Phone_No			CHAR(10),
+                      AddressID			CHAR (20),
+                      PRIMARY KEY (dname)
+                      FOREIGN KEY (AddressID) REFERENCE Address (AddressID));
+
+CREATE TABLE Owns (VIN				CHAR (17),
+                   dname				CHAR (50),
+                   FOREIGN KEY (VIN) REFERENCE Cars (VIN),
+                   FOREIGN KEY (dname) REFERENCE Dealers (dname),
+                   ON DELETE CASCADE);
+
+CREATE TABLE Buys (username				CHAR (20),
+                   VIN				CHAR (17),
+                   Price				REAL,
+                   Time				TIMESTAMP,
+                   FOREIGN KEY (username) REFERENCE Users (username),
+                   FOREIGN KEY (VIN) REFERENCE Cars (VIN),
+                   ON DELETE CASCADE);
+
+CREATE TABLE Bidding (VIN				CHAR (17),
+                      Price				REAL,
+                      Time				TIMESTAMP,
+                      username			CHAR (20),
+                      PRIMARY KEY (username,VIN),
+                      FOREIGN KEY (username) REFERENCE Users (username),
+                      FOREIGN KEY (VIN) REFERENCE Cars (VIN),
+                      ON DELETE CASCADE);
+                      
+CREATE TABLE Cars (VIN				CHAR (17),
+                   Year				CHAR (4),
+                   Mileage				REAL,
+                   Make				CHAR (20),
+                   Model				CHAR (20),
+                   Body_type			CHAR (20),
+                   Fuel				CHAR (15),
+                   Exterior_color		CHAR (10),
+                   Interior_color		CHAR (10),
+                   Drivetrain			CHAR (3),
+                   Transmission			CHAR (20),
+                   Engine				CHAR (20),
+                   Condition			CHAR (4),	
+                   PRIMARY KEY (VIN),
+                   FOREIGN KEY (Current_bid) REFERENCE Bidding (BidID));
+
+CREATE TABLE Comment (username			CHAR (20),                      dname				CHAR (50),
+                      Comment			CHAR (1000),
+                      Date				TIMESTAMP,
+                      PRIMARY (username, dname),
+                      FOREIGN KEY (username) REFERENCE Users (username),
+                      FOREIGN KEY (dname) REFERENCE Dealers (dname),
+                      ON DELETE CASCADE);
+\end{verbatim}
+
+\section{Technology Survey}
+\par At first we were looking for a language, which was `one for all' type. We want to find a language such that it could fit every needs of our design. However, this is impossible. From our research 
+
+
+\section{Populate Data for Database}
+We get 100 cars' data, including 50 items to be auctioned and 50 direct sale items to be sold directly from the Edmunds.com API.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
