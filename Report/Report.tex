@@ -456,7 +456,7 @@ Figure \ref{ERCom} shows the complete ER diagram design of our database applicat
 \underline{address id} & \cellcolor{red!25}zip & street & city & state\\\hline
 \end{tabularx}
 ~\\
-\par We have combined the two tables of the User Addresses, and the Dealer Addresses into one table named Addresses. Addressed is the primary key of the Table. Zip can be determined by city and state. But city or state cannot be determined only by zip, example, 42223 can be Kentucky or Tennessee. And for city Gainesville, it can be in FL or VA (2 cities in different state named Gainesville).\\
+\par We have combined the two tables of the User Addresses, and the Dealer Addresses into one table named Addresses. Addressid is the primary key of the Table. Zip can be determined by city and state. But city or state cannot be determined only by zip, example, 42223 can be Kentucky or Tennessee. And for city Gainesville, it can be in FL or VA (2 cities in different state named Gainesville).\\
 ~\\
 \begin{tabularx}{\textwidth}{|X|X|X|X|X|}
 \hline
@@ -667,7 +667,7 @@ Figure \ref{ERCom} shows the complete ER diagram design of our database applicat
 ~\\~\\~\\
 \par In first normal form\hfill$\rightarrow$check!
 \par \textcolor{red}{Non-prime attribute of the table is dependent on the \underline{whole of candidate key}\hfill$\rightarrow$Uncheck!}
-\par We put startTime, type, status into cars table, as attributes. Now, Owns table changes into:\\
+\par We put startTime, type, status into cars table, as attributes. Now, the Owns table changes into:\\
 ~\\
 \begin{tabularx}{\textwidth}{|X|X|}
 \hline
@@ -757,7 +757,7 @@ Figure \ref{ERCom} shows the complete ER diagram design of our database applicat
 ~\\~\\
 \par The entity is in second normal form\hfill $\rightarrow$check!
 \par \textcolor{red}{All the attributes in a table are determined only by the candidate keys of that table and not by any non-prime attributes.\hfill $\rightarrow$Uncheck!}
-\par Since card Number can determine expiration date and type, and card number is a non-prime attributes. It is not in third normal form. We decompose it into two tables:\\
+\par Since card number can determine type, and card number is a non-prime attributes. Hence, it is not in third normal form. We decompose it into two tables:\\
 ~\\
 \begin{tabularx}{\textwidth}{|X|X|X|}
 \hline
@@ -795,10 +795,10 @@ Figure \ref{ERCom} shows the complete ER diagram design of our database applicat
 \par The entity is in second normal form\hfill $\rightarrow$check!
 \par All the attributes in a table are determined only by the candidate keys of that table and not by any non-prime attributes.\hfill $\rightarrow$check!\\
 ~\\
-\begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+\begin{tabularx}{\textwidth}{|X|X|}
 \hline
-\multicolumn{5}{|c|}{Owns}\\\hline
-\underline{dname} & vin & start time & type & status\\\hline
+\multicolumn{2}{|c|}{Owns}\\\hline
+\underline{vin} & dname\\\hline
 \end{tabularx}
 ~\\~\\
 \par The entity is in second normal form\hfill $\rightarrow$check!
@@ -926,7 +926,8 @@ CREATE TABLE Cars (VIN				CHAR (17),
                    PRIMARY KEY (VIN),
                    FOREIGN KEY (Current_bid) REFERENCE Bidding (BidID));
 
-CREATE TABLE Comment (username			CHAR (20),                      dname				CHAR (50),
+CREATE TABLE Comment (username			CHAR (20),
+                      dname				CHAR (50),
                       Comment			CHAR (1000),
                       Date				TIMESTAMP,
                       PRIMARY (username, dname),
