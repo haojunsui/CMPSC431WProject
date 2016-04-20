@@ -1,63 +1,5 @@
-	html, body
-	{
-		height: 100%;
-	}
-	
-	body
-	{
-		margin: 0px;
-		padding: 0px;
-		background: #00838C;
-		font-family: 'Source Sans Pro', sans-serif;
-		font-size: 12pt;
-		font-weight: 400;
-		color: #000000;
-	}
-	
-	
-	h1, h2, h3
-	{
-		margin: 0;
-		padding: 0;
-	}
-	
-	p, ol, ul
-	{
-		margin-top: 0;
-	}
-	
-	ol, ul
-	{
-		padding: 0;
-		list-style: none;
-	}
-	
-	p
-	{
-		line-height: 180%;
-	}
-	
-	strong
-	{
-	}
-	
-	a
-	{
-		color: #0000FF;
-	}
-	
-	a:hover
-	{
-		text-decoration: none;
-	}
-	
 
-	.container
-	{
-		margin: 0px auto;
-		width: 1200px;
-	}
-	
+
 
 /*********************************************************************************/
 /* Form Style                                                                    */
@@ -66,14 +8,14 @@
 		form
 		{
 		}
-		
+
 			form label
 			{
 				display: block;
 				text-align: left;
 				margin-bottom: 0.5em;
 			}
-			
+
 			form .submit
 			{
 				margin-top: 2em;
@@ -81,7 +23,15 @@
 				line-height: 1.5em;
 				font-size: 1.3em;
 			}
-		
+
+			form .search
+			{
+				margin-top: 2em;
+				line-height: 1em;
+				font-size: 1.3em;
+				border-radius: 30px 30px 30px 30px;
+			}
+
 			form input.text,
 			form select,
 			form textarea
@@ -121,7 +71,7 @@
 					box-shadow: 0 0 2px 1px #E0E0E0;
 					background: #fff;
 				}
-				
+
 				form textarea
 				{
 					min-height: 12em;
@@ -167,32 +117,32 @@
 		display: inline-block;
 		border: 1px solid rgba(0,0,0,.1);
 	}
-	
+
 	.image img
 	{
 		display: block;
 		width: 100%;
 	}
-	
+
 	.image-full
 	{
 		display: block;
 		width: 100%;
 		margin: 0 0 3em 0;
 	}
-	
+
 	.image-left
 	{
 		float: left;
 		margin: 0 2em 2em 0;
 	}
-	
+
 	.image-centered
 	{
 		display: block;
 		margin: 0 0 2em 0;
 	}
-	
+
 	.image-centered img
 	{
 		margin: 0 auto;
@@ -218,26 +168,26 @@
 		padding: 2em 0em 0em 0em;
 		list-style: none;
 	}
-	
+
 	ul.contact li
 	{
 		display: inline-block;
 		padding: 0em 0.30em;
 		font-size: 1.2em;
 	}
-	
+
 	ul.contact li span
 	{
 		display: none;
 		margin: 0;
 		padding: 0;
 	}
-	
+
 	ul.contact li a
 	{
 		color: #FFF;
 	}
-	
+
 	ul.contact li a:before
 	{
 		display: inline-block;
@@ -248,7 +198,7 @@
 		text-align: center;
 		color: #FFFFFF;
 	}
-	
+
 
 /*********************************************************************************/
 /* Button Style                                                                  */
@@ -268,7 +218,7 @@
 		font-size: 1.2em;
 		color: #FFF;
 	}
-	
+
 	.button:before
 	{
 		display: inline-block;
@@ -281,14 +231,14 @@
 		text-align: center;
 		color: #272925;
 	}
-	
+
 	.button-small
 	{
 		padding: 0.9em 2em;
 		line-height: 1.8em;
 		font-size: 1em;
 	}
-		
+
 /*********************************************************************************/
 /* Heading Titles                                                                */
 /*********************************************************************************/
@@ -297,13 +247,13 @@
 	{
 		margin-bottom: 3em;
 	}
-	
+
 	.title h2
 	{
 		font-size: 2.8em;
 		color: rgba(255,255,255,0.9);
 	}
-	
+
 	.title .byline
 	{
 		letter-spacing: 0.15em;
@@ -313,106 +263,11 @@
 		color: #6F6F6F;
 	}
 
-/*********************************************************************************/
-/* Header                                                                        */
-/*********************************************************************************/
 
-	#header-wrapper
-	{
-		overflow: hidden;
-		padding: 5em 0em;
-		background: #B03500 url(images/overlay.png) repeat;
-	}
 
-	#header
-	{
-	}
 
-/*********************************************************************************/
-/* Logo                                                                          */
-/*********************************************************************************/
 
-	#logo
-	{
-		padding: 5em 0em;
-		text-align: center;
-	}
-	
-	#logo h1
-	{
-		font-size: 3.5em;
-	}
-	
-	#logo a
-	{
-		text-decoration: none;
-		color: #FFF;
-	}
-	
-	#logo span
-	{
-		letter-spacing: 0.10em;
-		text-transform: uppercase;
-		font-size: 0.90em;
-		color: rgba(255,255,255,0.5);
-	}
 
-	#logo span a
-	{
-		color: rgba(255,255,255,0.8);
-	}
-	
-	#logo .icon
-	{
-		font-size: 4em;
-		color: rgba(255,255,255,1);
-	}
-	
-	
-
-/*********************************************************************************/
-/* Menu                                                                          */
-/*********************************************************************************/
-
-	#menu
-	{
-		width: 80%;
-		margin: 0px auto;
-	}
-	
-	#menu ul
-	{
-		text-align: center;
-	}
-	
-	#menu li
-	{
-		display: inline-block;
-	}
-	
-	#menu li a, #menu li span
-	{
-		display: inline-block;
-		margin-left: 0.50em;
-		padding: 1.5em 1.5em;
-		letter-spacing: 0.20em;
-		text-decoration: none;
-		font-size: 0.90em;
-		font-weight: 600;
-		text-transform: uppercase;
-		outline: 0;
-		color: #FFF;
-	}
-	
-	#menu li:hover a, #menu li.active a, #menu li.active span
-	{
-	}
-	
-	#menu .current_page_item a
-	{
-		color: #FFF;
-	}
-	
 
 /*********************************************************************************/
 /* Banner                                                                        */
@@ -442,7 +297,7 @@
 		padding: 8em 0em;
 		background: #FFF;
 	}
-	
+
 	#wrapper4
 	{
 		overflow: hidden;
@@ -461,14 +316,14 @@
 		text-align: center;
 		color: rgba(255,255,255,0.3);
 	}
-	
+
 	#welcome .content
 	{
 		padding: 0em 8em;
 	}
-	
-	
-	
+
+
+
 	#welcome a,
 	#welcome strong
 	{
@@ -508,7 +363,7 @@
 		text-align: center;
 	}
 
-	
+
 	#footer .title span
 	{
 		color: rgba(255,255,255,0.4);
@@ -524,7 +379,7 @@
 		padding: 5em 0em;
 		border-top: 1px solid rgba(255,255,255,0.08);
 	}
-	
+
 	#copyright p
 	{
 		letter-spacing: 0.20em;
@@ -533,7 +388,7 @@
 		font-size: 0.80em;
 		color: rgba(255,255,255,0.3);
 	}
-	
+
 	#copyright a
 	{
 		text-decoration: none;
@@ -551,18 +406,18 @@
 		background: #EDEDED;
 		text-align: center;
 	}
-	
+
 	#newsletter .title h2
 	{
 		color: rgba(0,0,0,0.8);
 	}
-	
+
 	#newsletter .content
 	{
 		width: 600px;
 		margin: 0px auto;
 	}
-	
+
 /*********************************************************************************/
 /* Portfolio                                                                     */
 /*********************************************************************************/
@@ -570,13 +425,13 @@
 	#portfolio
 	{
 	}
-	
+
 	#portfolio .box
 	{
 		text-align: center;
 		color: rgba(0,0,0,0.5);
 	}
-	
+
 	#portfolio h3
 	{
 		display: block;
@@ -603,7 +458,7 @@
 	{
 		width: 282px;
 	}
-	
+
 	.column1,
 	.column2,
 	.column3
@@ -611,9 +466,19 @@
 		float: left;
 		margin-right: 24px;
 	}
-	
+
 	.column4
 	{
 		float: right;
 	}
-	
+
+	/*SEARCH FORM*/
+.search-form {
+    border-radius: 30px 30px 30px 30px;
+    /*border-radius:Top-left, Top-right, Bottom-right, Bottom-left;*/
+}
+/*to cange only one form and not all give unique class name like  class="search-form" */
+ .search-btn {
+    border-radius: 0px 30px 30px 0px;
+    cursor:pointer;
+}

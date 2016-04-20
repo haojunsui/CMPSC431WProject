@@ -1,0 +1,135 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: Source Sans Pro, sans-serif;
+	font-size: 12pt;
+	font-weight: 400;
+}
+
+h1, h2, h3 {
+	margin: 0;
+	padding: 0;
+}
+
+p, ol, ul {
+	margin-top: 0;
+}
+
+ol, ul {
+	padding: 0;
+	list-style: none;
+}
+
+p {
+	line-height: 180%;
+}
+
+strong {
+}
+
+a {
+	color: #0000FF;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+
+.container {
+	margin: 0px auto;
+	width: 1200px;
+}
+
+/*********************************************************************************/
+/* Header                                                                        */
+/*********************************************************************************/
+
+#header-wrapper {
+	overflow: hidden;
+	padding: 5em 0em;
+	background: #B03500 url(../images/overlay.png) repeat;
+}
+
+#header {
+}
+
+/*********************************************************************************/
+/* Logo                                                                          */
+/*********************************************************************************/
+
+#logo {
+	padding: 5em 0em;
+	text-align: center;
+}
+
+#logo h1 {
+	font-size: 3.5em;
+}
+
+#logo a {
+	text-decoration: none;
+	color: #FFF;
+}
+
+#logo span {
+	letter-spacing: 0.10em;
+	text-transform: uppercase;
+	font-size: 0.90em;
+	color: rgba(255,255,255,0.5);
+}
+
+#logo span a {
+	color: rgba(255,255,255,0.8);
+}
+
+#logo .icon {
+	font-size: 4em;
+	color: rgba(255,255,255,1);
+}
+
+/*********************************************************************************/
+/* Menu                                                                          */
+/*********************************************************************************/
+
+#menu {
+	width: 80%;
+	margin: 0px auto;
+}
+
+#menu ul {
+	text-align: center;
+}
+
+#menu li {
+	display: inline-block;
+}
+
+#menu li a, #menu li span {
+	display: inline-block;
+	margin-left: 0.50em;
+	padding: 1.5em 1.5em;
+	letter-spacing: 0.20em;
+	text-decoration: none;
+	font-size: 0.90em;
+	font-weight: 600;
+	text-transform: uppercase;
+	outline: 0;
+	color: #FFF;
+}
+
+#menu li:hover a, #menu li.active a, #menu li.active span {
+}
+
+#menu .current_page_item a {
+	color: #FFF;
+}
+
+.search-form {
+	border-radius: 30px 30px 30px 30px;
+	/*border-radius:Top-left, Top-right, Bottom-right, Bottom-left;*/
+}
