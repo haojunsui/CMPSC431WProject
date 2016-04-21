@@ -64,6 +64,71 @@
 }
 
 {
+    "firstname" : "Terry",
+    "lastname" : "Ashcraft",
+    "username" : "terryas",
+    "email" : "terryas@myspace.com",
+    "password" : "eu9u+e2A9a",
+    "dob" : "10/8/1950",
+    "income" : 531729,
+    "phone" : "(228) 366-6180",
+    "gender" : "F",
+    "rating" : 3
+}
+
+{
+    "firstname" : "Hali",
+    "lastname" : "Disanto",
+    "username" : "halidisan",
+    "email" : "halidisan@msn.com",
+    "password" : "uvA`u-EdYrA5",
+    "dob" : "5/24/1954",
+    "income" : 78840,
+    "phone" : "(402) 758-4856",
+    "gender" : "M",
+    "rating" : 5
+}
+
+{
+    "firstname" : "Pundarik",
+    "lastname" : "Vanderbilt",
+    "username" : "puvanderb",
+    "email" : "puvanderb@freespace.com",
+    "password" : "A8u3A_Y/Atu",
+    "dob" : "10/17/1958",
+    "income" : 97157,
+    "phone" : "(531) 032-5294",
+    "gender" : "M",
+    "rating" : 4
+}
+
+{
+    "firstname" : "Mace",
+    "lastname" : "Reyna",
+    "username" : "mace-rey",
+    "email" : "mace-rey@freewebmail.com",
+    "password" : "UVudA?U5u",
+    "dob" : "10/19/1980",
+    "income" : 70933,
+    "phone" : "(402) 040-1356",
+    "gender" : "F",
+    "rating" : 4
+}
+
+{
+    "firstname" : "Aldercy",
+    "lastname" : "Ashcraft",
+    "username" : "alde_ashcraft",
+    "email" : "alde_ashcraft@webmail.com",
+    "password" : "UmU/u?uzA",
+    "dob" : "9/26/1956",
+    "income" : 351816,
+    "phone" : "(601) 569-9464",
+    "gender" : "M",
+    "rating" : 5
+}
+
+{
     "firstname" : "",
     "lastname" : "",
     "username" : "",
