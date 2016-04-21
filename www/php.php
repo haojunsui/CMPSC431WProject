@@ -23,21 +23,44 @@ foreach ($result as $doc) {
 <?php
 
 $m = new MongoClient();
-$db = $m->selectDB('cars');
-$collection = new MongoCollection($db, 'collectionName?');
-$Make = $type = $model = $year = "";
+$db = $m->selectDB("biglegcarry");
+$maker_col = new MongoCollection($db, "maker");
+$model_col = new MongoCollection($db, "model");
+$year_col = new MongoCollection($db, "year");
+$type_col = new MongoCollection($db, "type");
+$makers = array();
+array_push($makers, "Any");
+$models = array();
+array_push($models, "Any");
+$year = array();
+array_push($year, "Any");
+$type = array();
+array_push($type, "Any");
 
-$general = $collection->find();
-foreach ($general as $doc){
-	var_dump($doc);
+// Find makers from mongodb
+$cursor = $maker_col->find();
+
+foreach ($cursor as $obj) {
+	array_push($makers, $obj["maker"]);
 }
-$Make_all = $collection->find()->fields(array("Make"=>true));
-$type_all = $collection->find()->fields(array("type"=>true));
-$model_all = $collection->find()->fields(array("model"=>true));
-$year_all = $collection->find()->fields(array("year"=>true));
 
-$search = array('Make' => 'XXXX','type' => 'XXXX','model' => 'XXXX','year' => 'XXXX');
+//model
+$cursor = $model_col->find();
+
+foreach ($cursor as $obj) {
+	array_push($modle, $obj["model"]);
+}
+$cursor = $type_col->find();
+
+foreach ($cursor as $obj) {
+	array_push($type, $obj["type"]);
+}
+$cursor = $year_col->find();
+
+foreach ($cursor as $obj) {
+	array_push($year, $obj["year"]);
+}
+
+//$search = array('Make' => 'XXXX','type' => 'XXXX','model' => 'XXXX','year' => 'XXXX');
 
 ?>
-
-
