@@ -28,11 +28,89 @@
     "firstname" : "Iratze",
     "lastname" : "Stolz",
     "username" : "ir_sto",
-    "email" : " ir_sto@bing.com",
+    "email" : "ir_sto@bing.com",
     "password" : "uXe#uSe",
     "dob" : "2/3/1954",
     "income" : 77923,
     "phone" : "(947) 274-9163",
     "gender" : "M",
     "rating" : 4
+}
+
+{
+    "firstname" : "Jesal",
+    "lastname" : "Sokol",
+    "username" : "je_sokol",
+    "email" : "je_sokol@mail.com",
+    "password" : "e^aRu5yZ",
+    "dob" : " 1/17/1966",
+    "income" : 64440,
+    "phone" : "(605) 719-2271",
+    "gender" : "M",
+    "rating" : 4
+}
+
+{
+    "firstname" : "Ryuichi",
+    "lastname" : "Mader",
+    "username" : "ryuimader",
+    "email" : "ryuimader@yahoo.ca",
+    "password" : "ABeRY$U+",
+    "dob" : "3/28/1988",
+    "income" : 84492,
+    "phone" : "(702) 783-7221)",
+    "gender" : "M",
+    "rating" : 1
+}
+
+{
+    "firstname" : "",
+    "lastname" : "",
+    "username" : "",
+    "email" : "",
+    "password" : "",
+    "dob" : "",
+    "income" : ,
+    "phone" : "",
+    "gender" : "",
+    "rating" :
+}
+
+{
+    "firstname" : "",
+    "lastname" : "",
+    "username" : "",
+    "email" : "",
+    "password" : "",
+    "dob" : "",
+    "income" : ,
+    "phone" : "",
+    "gender" : "",
+    "rating" :
+}
+
+{
+    "firstname" : "",
+    "lastname" : "",
+    "username" : "",
+    "email" : "",
+    "password" : "",
+    "dob" : "",
+    "income" : ,
+    "phone" : "",
+    "gender" : "",
+    "rating" :
+}
+
+{
+    "firstname" : "",
+    "lastname" : "",
+    "username" : "",
+    "email" : "",
+    "password" : "",
+    "dob" : "",
+    "income" : ,
+    "phone" : "",
+    "gender" : "",
+    "rating" :
 }
