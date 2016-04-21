@@ -129,53 +129,66 @@
 }
 
 {
-    "firstname" : "",
-    "lastname" : "",
-    "username" : "",
-    "email" : "",
-    "password" : "",
-    "dob" : "",
-    "income" : ,
-    "phone" : "",
-    "gender" : "",
-    "rating" :
+    "firstname" : "Nantale",
+    "lastname" : "Tanaka",
+    "username" : "nanttan",
+    "email" : "nanttan@booksmart.com",
+    "password" : "?YVSamUa",
+    "dob" : "7/3/1953",
+    "income" : 95335,
+    "phone" : "(641) 848-3212",
+    "gender" : "F",
+    "rating" : 1
 }
 
 {
-    "firstname" : "",
-    "lastname" : "",
-    "username" : "",
-    "email" : "",
-    "password" : "",
-    "dob" : "",
-    "income" : ,
-    "phone" : "",
-    "gender" : "",
-    "rating" :
+    "firstname" : "Adriana",
+    "lastname" : "Adams",
+    "username" : "adrianaad",
+    "email" : "adriana_ad@webmine.com",
+    "password" : "YGU}EDY!e",
+    "dob" : "3/28/1954",
+    "income" : 99097,
+    "phone" : "(712) 156-8358",
+    "gender" : "F",
+    "rating" : 1
 }
 
 {
-    "firstname" : "",
-    "lastname" : "",
-    "username" : "",
-    "email" : "",
-    "password" : "",
-    "dob" : "",
-    "income" : ,
-    "phone" : "",
-    "gender" : "",
-    "rating" :
+    "firstname" : "Arlen",
+    "lastname" : "Tanaka",
+    "username" : "artana",
+    "email" : "artana@infoseller.com",
+    "password" : "ZAne3A",
+    "dob" : "3/28/1980",
+    "income" : 77633,
+    "phone" : "(904) 456-1691",
+    "gender" : "M",
+    "rating" : 3
 }
 
 {
-    "firstname" : "",
-    "lastname" : "",
-    "username" : "",
-    "email" : "",
-    "password" : "",
-    "dob" : "",
-    "income" : ,
-    "phone" : "",
-    "gender" : "",
-    "rating" :
+    "firstname" : "Nantale",
+    "lastname" : "Jean",
+    "username" : "nanjea",
+    "email" : "nanjea@yoohoo.com",
+    "password" : "u?ausUE@",
+    "dob" : "3/8/1973",
+    "income" : 80979,
+    "phone" : "(443) 349-8551",
+    "gender" : "F",
+    "rating" : 3
+}
+
+{
+    "firstname" : "Seldon",
+    "lastname" : "Zeman",
+    "username" : "sezem",
+    "email" : "sezem@freespace.com",
+    "password" : "eRuzYmu",
+    "dob" : " 9/1/1986",
+    "income" : 126397,
+    "phone" : "(712) 276-7024",
+    "gender" : "M",
+    "rating" : 3
 }
