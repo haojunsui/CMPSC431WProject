@@ -1,0 +1,38 @@
+{
+    "firstname" : "Leoma",
+    "lastname" : "Stolz",
+    "username" : "leom_stol",
+    "email" : "leom_stol@webmine.com",
+    "password" : "yjyja5uLY{a-",
+    "dob" : "2/6/1974",
+    "income" : 650073,
+    "phone" : "(605) 359-6381",
+    "gender" : "F",
+    "rating" : 3
+}
+
+{
+    "firstname" : "Ryuichi",
+    "lastname" : "Ament",
+    "username" : "ryuicamen",
+    "email" : "ryuicamen@info.com",
+    "password" : "UZu#Y]uDY",
+    "dob" : "11/3/1973",
+    "income" : 50878,
+    "phone" : "(401) 709-8332",
+    "gender" : "F",
+    "rating" : 5
+}
+
+{
+    "firstname" : "Iratze",
+    "lastname" : "Stolz",
+    "username" : "ir_sto",
+    "email" : " ir_sto@bing.com",
+    "password" : "uXe#uSe",
+    "dob" : "2/3/1954",
+    "income" : 77923,
+    "phone" : "(947) 274-9163",
+    "gender" : "M",
+    "rating" : 4
+}
