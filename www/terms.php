@@ -25,14 +25,9 @@
 			</table>
 		</header>
 		<br>
-		<form>
-			User name:<br>
-			<input type="text" name="username"><br>
-			User password:<br>
-			<input type="password" name="psw"><br>
-			<button type="button" name="login">Log in</button>
-			<button type="button" name="signup" onclick="window.location.href='signup.php'">Sign up</button>
-		</form>
+		<p>
+			Here lies the BigLegCarry terms.
+		</p>
 	</div>
 </body>
 

@@ -14,7 +14,7 @@
 			<table border="1" align="center" width="100%">
 				<tr>
 					<td><a href="index.php">Home</a></td>
-					<td><a href="cars.php?maker=Any&model=Any">Cars</a></td>
+					<td><a href="cars.php?maker=Any&model=Any&color=Any">Cars</a></td>
 					<td><a href="dealers.php">Dealers</a></td>
 					<td><a href="about.php">About Us</a></td>
 					<td>
