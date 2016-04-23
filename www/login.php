@@ -5,7 +5,7 @@
 <head>
 </head>
 
-<title>Sign In - BigLegCarry</title>
+<title>Log In - BigLegCarry</title>
 
 <body>
 	<div style="text-align:center">
@@ -20,7 +20,7 @@
 					<td>
 						<input type="text" size="7" id="search_cars" placeholder="Type to search" style="width: 100%;box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;">
 					</td>
-					<td><a href="sign.php">Sign in</a></td>
+					<td><a href="login.php">Log in / Sign up</a></td>
 				</tr>
 			</table>
 		</header>
@@ -30,7 +30,7 @@
 			<input type="text" name="username"><br>
 			User password:<br>
 			<input type="password" name="psw"><br>
-			<button type="button" name="sign">Sign in</button><br>
+			<button type="button" name="login">Log in</button><br>
 		</form>
 	</div>
 </body>

@@ -20,7 +20,7 @@
 					<td>
 						<input type="text" size="7" id="search_cars" placeholder="Type to search" style="width: 100%;box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;">
 					</td>
-					<td><a href="sign.php">Sign in</a></td>
+					<td><a href="login.php">Log in / Sign up</a></td>
 				</tr>
 			</table>
 		</header>

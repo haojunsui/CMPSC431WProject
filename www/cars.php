@@ -9,10 +9,12 @@
 		$db = $m->selectDB("biglegcarry");
 		$maker_col = new MongoCollection($db, "maker");
 		$model_col = new MongoCollection($db, "model");
+		$car_col = new MongoCollection($db, "car");
 		$makers = array();
 		array_push($makers, "Any");
 		$models = array();
 		array_push($models, "Any");
+		$cars = array();
 
 		// Get maker and model from url
 		$maker = $_GET["maker"];
@@ -35,20 +37,37 @@
 				}
 			}
 		}
+
+		if ($maker == "Any") {
+			$cursor = $car_col->find();
+		} else {
+			if ($model == "Any")
+				$cursor = $car_col->find(array("maker" => $maker));
+			else
+				$cursor = $car_col->find(array("maker" => $maker, "model" => $model));
+		}
+		foreach ($cursor as $obj) {
+				array_push($cars, $obj);
+		}
 	?>
 
 	<script type="text/javascript">
-		function changed() {
-			// Refresh page with new maker and new model
+		function maker_changed() {
+			// Refresh page with new maker
+			var maker_sel = document.getElementById("maker");
+			maker_sel = maker_sel.options[maker_sel.selectedIndex].value;
+
+			location.href = "cars.php?maker=" + maker_sel + "&model=Any";
+		}
+
+		function model_changed() {
+			// Refresh page with new model
 			var maker_sel = document.getElementById("maker");
 			maker_sel = maker_sel.options[maker_sel.selectedIndex].value;
 			var model_sel = document.getElementById("model");
 			model_sel = model_sel.options[model_sel.selectedIndex].value;
 
-			if (maker_sel != "Any")
-				location.href = "cars.php?maker=" + maker_sel + "&model=" + model_sel;
-			else
-				location.href = "cars.php?maker=Any&model=Any";
+			location.href = "cars.php?maker=" + maker_sel + "&model=" + model_sel;
 		}
 
 		function pop_dropdown() {
@@ -82,12 +101,53 @@
 					model_drop.options[i].selected = true;
 			}
 		}
+
+		function pop_table() {
+			var cars = <?php echo json_encode($cars);?>;
+
+			var car_table_div = document.getElementById("car_table_div");
+			var car_table = document.createElement("table");
+			var car_table_body = document.createElement("tbody");
+			var tr = document.createElement('tr');
+			var col = 4;
+
+			car_table.border = '1';
+			car_table.width = "100%";
+			car_table.appendChild(car_table_body);
+
+			for (var i = 0; i < cars.length; i++) {
+				if (i % col == 0) {
+					car_table_body.appendChild(tr);
+					tr = document.createElement('tr');
+				}
+
+				var td = document.createElement('td');
+				td.appendChild(document.createTextNode("Maker: " + cars[i]["maker"]));
+				td.appendChild(document.createElement('br'));
+				td.appendChild(document.createTextNode("Model: " + cars[i]["model"]));
+				td.appendChild(document.createElement('br'));
+				td.appendChild(document.createTextNode("Dealer: " + cars[i]["dealer"]));
+				td.appendChild(document.createElement('br'));
+				td.appendChild(document.createTextNode("Mileage: " + cars[i]["mileage"]));
+				td.appendChild(document.createElement('br'));
+				td.appendChild(document.createTextNode("Price: " + cars[i]["price"]));
+				td.appendChild(document.createElement('br'));
+				td.appendChild(document.createTextNode("Color: " + cars[i]["color"]));
+				td.appendChild(document.createElement('br'));
+				td.appendChild(document.createTextNode("N/U: " + cars[i]["newuse"]));
+				tr.appendChild(td);
+			}
+
+			car_table_body.appendChild(tr);
+
+			car_table_div.appendChild(car_table);
+		}
 	</script>
 </head>
 
 <title>Our Cars - BigLegCarry</title>
 
-<body onLoad="pop_dropdown();">
+<body onLoad="pop_dropdown();pop_table();">
 	<div style="text-align:center">
 		<header>
 			<h1>BigLegCarry</h1>
@@ -100,7 +160,7 @@
 					<td>
 						<input type="text" size="7" id="search_cars" placeholder="Type to search" style="width: 100%;box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;">
 					</td>
-					<td><a href="sign.php">Sign in</a></td>
+					<td><a href="login.php">Log in / Sign up</a></td>
 				</tr>
 			</table>
 		</header>
@@ -111,15 +171,17 @@
 			<tr>
 				<td>
 					Maker:
-					<select id="maker" onchange="changed();"></select>
+					<select id="maker" onchange="maker_changed();"></select>
 				</td>
 				<td>
 					Model:
-					<select id="model" onchange="changed();"></select>
+					<select id="model" onchange="model_changed();"></select>
 				</td>
 			</tr>
 		</table>
 	</div>
+	<br>
+	<div id="car_table_div"></div>
 </body>
 
 </html>

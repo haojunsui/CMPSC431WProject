@@ -1,194 +1,194 @@
 {
-    "firstname" : "Leoma",
-    "lastname" : "Stolz",
-    "username" : "leom_stol",
-    "email" : "leom_stol@webmine.com",
-    "password" : "yjyja5uLY{a-",
-    "dob" : "2/6/1974",
-    "income" : 650073,
-    "phone" : "(605) 359-6381",
-    "gender" : "F",
-    "rating" : 3
+	"firstname" : "Leoma",
+	"lastname" : "Stolz",
+	"username" : "leom_stol",
+	"email" : "leom_stol@webmine.com",
+	"password" : "yjyja5uLY{a-",
+	"dob" : "2/6/1974",
+	"income" : 650073,
+	"phone" : "(605) 359-6381",
+	"gender" : "F",
+	"rating" : 3
 }
 
 {
-    "firstname" : "Ryuichi",
-    "lastname" : "Ament",
-    "username" : "ryuicamen",
-    "email" : "ryuicamen@info.com",
-    "password" : "UZu#Y]uDY",
-    "dob" : "11/3/1973",
-    "income" : 50878,
-    "phone" : "(401) 709-8332",
-    "gender" : "F",
-    "rating" : 5
+	"firstname" : "Ryuichi",
+	"lastname" : "Ament",
+	"username" : "ryuicamen",
+	"email" : "ryuicamen@info.com",
+	"password" : "UZu#Y]uDY",
+	"dob" : "11/3/1973",
+	"income" : 50878,
+	"phone" : "(401) 709-8332",
+	"gender" : "F",
+	"rating" : 5
 }
 
 {
-    "firstname" : "Iratze",
-    "lastname" : "Stolz",
-    "username" : "ir_sto",
-    "email" : "ir_sto@bing.com",
-    "password" : "uXe#uSe",
-    "dob" : "2/3/1954",
-    "income" : 77923,
-    "phone" : "(947) 274-9163",
-    "gender" : "M",
-    "rating" : 4
+	"firstname" : "Iratze",
+	"lastname" : "Stolz",
+	"username" : "ir_sto",
+	"email" : "ir_sto@bing.com",
+	"password" : "uXe#uSe",
+	"dob" : "2/3/1954",
+	"income" : 77923,
+	"phone" : "(947) 274-9163",
+	"gender" : "M",
+	"rating" : 4
 }
 
 {
-    "firstname" : "Jesal",
-    "lastname" : "Sokol",
-    "username" : "je_sokol",
-    "email" : "je_sokol@mail.com",
-    "password" : "e^aRu5yZ",
-    "dob" : " 1/17/1966",
-    "income" : 64440,
-    "phone" : "(605) 719-2271",
-    "gender" : "M",
-    "rating" : 4
+	"firstname" : "Jesal",
+	"lastname" : "Sokol",
+	"username" : "je_sokol",
+	"email" : "je_sokol@mail.com",
+	"password" : "e^aRu5yZ",
+	"dob" : " 1/17/1966",
+	"income" : 64440,
+	"phone" : "(605) 719-2271",
+	"gender" : "M",
+	"rating" : 4
 }
 
 {
-    "firstname" : "Ryuichi",
-    "lastname" : "Mader",
-    "username" : "ryuimader",
-    "email" : "ryuimader@yahoo.ca",
-    "password" : "ABeRY$U+",
-    "dob" : "3/28/1988",
-    "income" : 84492,
-    "phone" : "(702) 783-7221)",
-    "gender" : "M",
-    "rating" : 1
+	"firstname" : "Ryuichi",
+	"lastname" : "Mader",
+	"username" : "ryuimader",
+	"email" : "ryuimader@yahoo.ca",
+	"password" : "ABeRY$U+",
+	"dob" : "3/28/1988",
+	"income" : 84492,
+	"phone" : "(702) 783-7221)",
+	"gender" : "M",
+	"rating" : 1
 }
 
 {
-    "firstname" : "Terry",
-    "lastname" : "Ashcraft",
-    "username" : "terryas",
-    "email" : "terryas@myspace.com",
-    "password" : "eu9u+e2A9a",
-    "dob" : "10/8/1950",
-    "income" : 531729,
-    "phone" : "(228) 366-6180",
-    "gender" : "F",
-    "rating" : 3
+	"firstname" : "Terry",
+	"lastname" : "Ashcraft",
+	"username" : "terryas",
+	"email" : "terryas@myspace.com",
+	"password" : "eu9u+e2A9a",
+	"dob" : "10/8/1950",
+	"income" : 531729,
+	"phone" : "(228) 366-6180",
+	"gender" : "F",
+	"rating" : 3
 }
 
 {
-    "firstname" : "Hali",
-    "lastname" : "Disanto",
-    "username" : "halidisan",
-    "email" : "halidisan@msn.com",
-    "password" : "uvA`u-EdYrA5",
-    "dob" : "5/24/1954",
-    "income" : 78840,
-    "phone" : "(402) 758-4856",
-    "gender" : "M",
-    "rating" : 5
+	"firstname" : "Hali",
+	"lastname" : "Disanto",
+	"username" : "halidisan",
+	"email" : "halidisan@msn.com",
+	"password" : "uvA`u-EdYrA5",
+	"dob" : "5/24/1954",
+	"income" : 78840,
+	"phone" : "(402) 758-4856",
+	"gender" : "M",
+	"rating" : 5
 }
 
 {
-    "firstname" : "Pundarik",
-    "lastname" : "Vanderbilt",
-    "username" : "puvanderb",
-    "email" : "puvanderb@freespace.com",
-    "password" : "A8u3A_Y/Atu",
-    "dob" : "10/17/1958",
-    "income" : 97157,
-    "phone" : "(531) 032-5294",
-    "gender" : "M",
-    "rating" : 4
+	"firstname" : "Pundarik",
+	"lastname" : "Vanderbilt",
+	"username" : "puvanderb",
+	"email" : "puvanderb@freespace.com",
+	"password" : "A8u3A_Y/Atu",
+	"dob" : "10/17/1958",
+	"income" : 97157,
+	"phone" : "(531) 032-5294",
+	"gender" : "M",
+	"rating" : 4
 }
 
 {
-    "firstname" : "Mace",
-    "lastname" : "Reyna",
-    "username" : "mace-rey",
-    "email" : "mace-rey@freewebmail.com",
-    "password" : "UVudA?U5u",
-    "dob" : "10/19/1980",
-    "income" : 70933,
-    "phone" : "(402) 040-1356",
-    "gender" : "F",
-    "rating" : 4
+	"firstname" : "Mace",
+	"lastname" : "Reyna",
+	"username" : "mace-rey",
+	"email" : "mace-rey@freewebmail.com",
+	"password" : "UVudA?U5u",
+	"dob" : "10/19/1980",
+	"income" : 70933,
+	"phone" : "(402) 040-1356",
+	"gender" : "F",
+	"rating" : 4
 }
 
 {
-    "firstname" : "Aldercy",
-    "lastname" : "Ashcraft",
-    "username" : "alde_ashcraft",
-    "email" : "alde_ashcraft@webmail.com",
-    "password" : "UmU/u?uzA",
-    "dob" : "9/26/1956",
-    "income" : 351816,
-    "phone" : "(601) 569-9464",
-    "gender" : "M",
-    "rating" : 5
+	"firstname" : "Aldercy",
+	"lastname" : "Ashcraft",
+	"username" : "alde_ashcraft",
+	"email" : "alde_ashcraft@webmail.com",
+	"password" : "UmU/u?uzA",
+	"dob" : "9/26/1956",
+	"income" : 351816,
+	"phone" : "(601) 569-9464",
+	"gender" : "M",
+	"rating" : 5
 }
 
 {
-    "firstname" : "Nantale",
-    "lastname" : "Tanaka",
-    "username" : "nanttan",
-    "email" : "nanttan@booksmart.com",
-    "password" : "?YVSamUa",
-    "dob" : "7/3/1953",
-    "income" : 95335,
-    "phone" : "(641) 848-3212",
-    "gender" : "F",
-    "rating" : 1
+	"firstname" : "Nantale",
+	"lastname" : "Tanaka",
+	"username" : "nanttan",
+	"email" : "nanttan@booksmart.com",
+	"password" : "?YVSamUa",
+	"dob" : "7/3/1953",
+	"income" : 95335,
+	"phone" : "(641) 848-3212",
+	"gender" : "F",
+	"rating" : 1
 }
 
 {
-    "firstname" : "Adriana",
-    "lastname" : "Adams",
-    "username" : "adrianaad",
-    "email" : "adriana_ad@webmine.com",
-    "password" : "YGU}EDY!e",
-    "dob" : "3/28/1954",
-    "income" : 99097,
-    "phone" : "(712) 156-8358",
-    "gender" : "F",
-    "rating" : 1
+	"firstname" : "Adriana",
+	"lastname" : "Adams",
+	"username" : "adrianaad",
+	"email" : "adriana_ad@webmine.com",
+	"password" : "YGU}EDY!e",
+	"dob" : "3/28/1954",
+	"income" : 99097,
+	"phone" : "(712) 156-8358",
+	"gender" : "F",
+	"rating" : 1
 }
 
 {
-    "firstname" : "Arlen",
-    "lastname" : "Tanaka",
-    "username" : "artana",
-    "email" : "artana@infoseller.com",
-    "password" : "ZAne3A",
-    "dob" : "3/28/1980",
-    "income" : 77633,
-    "phone" : "(904) 456-1691",
-    "gender" : "M",
-    "rating" : 3
+	"firstname" : "Arlen",
+	"lastname" : "Tanaka",
+	"username" : "artana",
+	"email" : "artana@infoseller.com",
+	"password" : "ZAne3A",
+	"dob" : "3/28/1980",
+	"income" : 77633,
+	"phone" : "(904) 456-1691",
+	"gender" : "M",
+	"rating" : 3
 }
 
 {
-    "firstname" : "Nantale",
-    "lastname" : "Jean",
-    "username" : "nanjea",
-    "email" : "nanjea@yoohoo.com",
-    "password" : "u?ausUE@",
-    "dob" : "3/8/1973",
-    "income" : 80979,
-    "phone" : "(443) 349-8551",
-    "gender" : "F",
-    "rating" : 3
+	"firstname" : "Nantale",
+	"lastname" : "Jean",
+	"username" : "nanjea",
+	"email" : "nanjea@yoohoo.com",
+	"password" : "u?ausUE@",
+	"dob" : "3/8/1973",
+	"income" : 80979,
+	"phone" : "(443) 349-8551",
+	"gender" : "F",
+	"rating" : 3
 }
 
 {
-    "firstname" : "Seldon",
-    "lastname" : "Zeman",
-    "username" : "sezem",
-    "email" : "sezem@freespace.com",
-    "password" : "eRuzYmu",
-    "dob" : " 9/1/1986",
-    "income" : 126397,
-    "phone" : "(712) 276-7024",
-    "gender" : "M",
-    "rating" : 3
+	"firstname" : "Seldon",
+	"lastname" : "Zeman",
+	"username" : "sezem",
+	"email" : "sezem@freespace.com",
+	"password" : "eRuzYmu",
+	"dob" : " 9/1/1986",
+	"income" : 126397,
+	"phone" : "(712) 276-7024",
+	"gender" : "M",
+	"rating" : 3
 }
