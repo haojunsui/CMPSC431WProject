@@ -1,0 +1,12 @@
+Maker.json
+(Maker: String)
+Model.json
+(Model: Array, Maker: String)
+User.json
+(FirstName: Name, LastName: String, Username: String, Email: String, Password: String, DOB: String, Income: Double, Phone: String, Gender: String, Rating: Double, U/D: String)
+Car.json
+(Model: String, Maker: String, Dealer: String, Mileage: Int, Price: Double, Color: String, N/U: String, Status: String, VID: String)
+Sold.json
+(Username: String, Dealer: String, VID: String)
+Bid.json
+(Username: String, Dealer: String, VID: String)
