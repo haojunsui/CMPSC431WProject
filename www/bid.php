@@ -3,7 +3,7 @@ $connection = new MongoClient();
 $db = $connection -> biglegcarry;
 $col_bid = $connection -> bid;
 
-$bid_user = $bid_vin = $bid_topprice = $bid_newprice'';
+$bid_user = $bid_vin = $bid_topprice = $bid_newprice = "";
 
 //get data from when user click bid button?
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
