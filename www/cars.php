@@ -3,6 +3,7 @@
 <html>
 
 <head>
+	<link rel="stylesheet" type="text/css" href="css/default.css">
 	<?php
 		// Make mongodb connection
 		$m = new MongoClient();
@@ -153,106 +154,104 @@
 			}
 		}
 
-		function pop_table() {
+		function pop_car_list() {
 			var cars = <?php echo json_encode($cars);?>;
 
-			var car_table_div = document.getElementById("car_table_div");
-			var car_table = document.createElement("table");
-			var car_table_body = document.createElement("tbody");
-			var tr = document.createElement('tr');
-			var col = 4;
+			var car_list_div = document.getElementById("car_list_div");
+			var car_list = document.createElement("ul");
 
-			car_table.border = '1';
-			car_table.width = "100%";
-			car_table.appendChild(car_table_body);
+			car_list.width = "100%";
 
 			for (var i = 0; i < cars.length; i++) {
-				if (i % col == 0) {
-					car_table_body.appendChild(tr);
-					tr = document.createElement('tr');
-				}
-
-				var td = document.createElement('td');
-				td.appendChild(document.createTextNode("Maker: " + cars[i]["maker"]));
-				td.appendChild(document.createElement('br'));
-				td.appendChild(document.createTextNode("Model: " + cars[i]["model"]));
-				td.appendChild(document.createElement('br'));
-				td.appendChild(document.createTextNode("Dealer: " + cars[i]["dealer"]));
-				td.appendChild(document.createElement('br'));
-				td.appendChild(document.createTextNode("Mileage: " + cars[i]["mileage"]));
-				td.appendChild(document.createElement('br'));
-				td.appendChild(document.createTextNode("Price: " + cars[i]["price"]));
-				td.appendChild(document.createElement('br'));
-				td.appendChild(document.createTextNode("Color: " + cars[i]["color"]));
-				td.appendChild(document.createElement('br'));
-				td.appendChild(document.createTextNode("N/U: " + cars[i]["newuse"]));
-				tr.appendChild(td);
+				var li = document.createElement("li");
+				var a = document.createElement('a');
+				a.setAttribute("href", "index.php");
+				li.appendChild(a);
+				li.appendChild(document.createTextNode("Maker: " + cars[i]["maker"]));
+				li.appendChild(document.createElement('br'));
+				li.appendChild(document.createTextNode("Model: " + cars[i]["model"]));
+				li.appendChild(document.createElement('br'));
+				li.appendChild(document.createTextNode("Dealer: " + cars[i]["dealer"]));
+				li.appendChild(document.createElement('br'));
+				li.appendChild(document.createTextNode("Mileage: " + cars[i]["mileage"]));
+				li.appendChild(document.createElement('br'));
+				li.appendChild(document.createTextNode("Price: " + cars[i]["price"]));
+				li.appendChild(document.createElement('br'));
+				li.appendChild(document.createTextNode("Color: " + cars[i]["color"]));
+				li.appendChild(document.createElement('br'));
+				li.appendChild(document.createTextNode("N/U: " + cars[i]["newuse"]));
+				car_list.appendChild(li);
 			}
 
-			car_table_body.appendChild(tr);
-
-			car_table_div.appendChild(car_table);
+			car_list_div.appendChild(car_list);
 		}
 	</script>
 </head>
 
 <title>Our Cars - BigLegCarry</title>
 
-<body onLoad="pop_dropdown();pop_table();">
-	<div style="text-align:center">
-		<header>
-			<h1>BigLegCarry</h1>
-			<table border="1" align="center" width="100%">
-				<tr>
-					<td><a href="index.php">Home</a></td>
-					<td><a href="cars.php?maker=Any&model=Any&color=Any">Cars</a></td>
-					<td><a href="dealers.php">Dealers</a></td>
-					<td><a href="about.php">About Us</a></td>
-					<td>
-						<input type="text" size="7" id="search_cars" placeholder="Type to search" style="width: 100%;box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;">
-					</td>
-					<td><a href="login.php">Log in / Sign up</a></td>
-				</tr>
-			</table>
-		</header>
+<body onLoad="pop_dropdown();pop_car_list();">
+	<h1>BigLegCarry</h1>
+
+	<div class="navigation_bar">
+		<ul>
+			<li><a href="index.php">Home</a></li>
+			<li><a href="cars.php?maker=Any&model=Any&color=Any">Cars</a></li>
+			<li><a href="about.php">About Us</a></li>
+			<li id="search">
+				<input type="text" id="search_cars" placeholder="Type to search">
+			</li>
+			<li><a href="login.php">Log in / Sign up</a></li>
+		</ul>
 	</div>
 	<br>
-	<div>
-		<table border="0" width="100%">
-			<tr>
-				<td>
-					Maker:
-					<select id="maker" onchange="maker_changed();"></select>
-				</td>
-				<td>
-					Model:
-					<select id="model" onchange="model_changed();"></select>
-				</td>
-				<td>
-					Color:
-					<select id="color" onchange="search();"></select>
-				</td>
-				<td>
-					<input type="radio" id="new" checked>New
-					<input type="radio" id="used">Used
-				</td>
-				<td>
-					Year: <input type="text" id="year" placeholder="YYYY" size="1" maxlength="4">
-				</td>
-				<td>
-					Price ($): <input type="text" id="lprice" placeholder="0" size="1"> - <input type="text" id="rprice" placeholder=&infin; size="1">
-				</td>
-				<td>
-					Mileage (mi): <input type="text" id="lmileage" placeholder="0" size="1"> - <input type="text" id="rmileage" placeholder=&infin; size="1">
-				</td>
-				<td>
-					<button type="button" id="search" onclick="search();">Search</button>
-				</td>
-			</tr>
-		</table>
+	<div class="search_menu">
+		<ul>
+			<li>
+				Maker:
+				<select id="maker" onchange="maker_changed();"></select>
+			</li>
+			<li>
+				Model:
+				<select id="model" onchange="model_changed();"></select>
+			</li>
+			<li>
+				Color:
+				<select id="color" onchange="search();"></select>
+			</li>
+			<li>
+				<form>
+					<input type="radio" name="n/u" id="new" checked>New
+					<input type="radio" name="n/u" id="used">Used
+				</form>
+			</li>
+			<li>
+				Year: <input type="text" id="year" placeholder="YYYY" size="1" maxlength="4">
+			</li>
+			<li>
+				Price ($): <input type="text" id="lprice" placeholder="0" size="1"> - <input type="text" id="rprice" placeholder=&infin; size="1">
+			</li>
+			<li>
+				Mileage (mi): <input type="text" id="lmileage" placeholder="0" size="1"> - <input type="text" id="rmileage" placeholder=&infin; size="1">
+			</li>
+			<li>
+				<button type="button" id="search" onclick="search();">Search</button>
+			</li>
+		</ul>
 	</div>
+	<div id="car_list_div" class="car_list"></div>
 	<br>
-	<div id="car_table_div"></div>
+	<div class="footer">
+		<p class="footer-links">
+			<a href="index.php">Home</a>
+			|
+			<a href="cars.php?maker=Any&model=Any&color=Any">Cars</a>
+			|
+			<a href="about.php">About Us</a>
+		</p>
+
+		<p class="footer-company-name">BigLegCarry &copy; 2016</p>
+	</div>
 </body>
 
 </html>
