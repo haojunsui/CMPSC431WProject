@@ -5,7 +5,8 @@
 	"mileage": 13000,
 	"price": 13000,
 	"color": "red",
-	"newuse": "new"
+	"newuse": "new",
+	"VIN": "1N4AL3AP0GC123479"
 }
 {
 	"model": "Rogue",

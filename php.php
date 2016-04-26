@@ -32,11 +32,13 @@ foreach ($general as $doc){
 	var_dump($doc);
 }
 
-$make_all = $collection->find({}, {_id:0, Make:1});
-$type_all = $collection->find({}, {_id:0, type:1});
-$model_all = $collection->find({}, {_id:0, model:1});
-$year_all = $collection->find({}, {_id:0, year:1});
+$make_all = $collection->find(array({}, {_id:0, Make:1}));
+$type_all = $collection->find(array({}, {_id:0, type:1}));
+$model_all = $collection->find(array({}, {_id:0, model:1}));
+$year_all = $collection->find(array({}, {_id:0, year:1}));
 if()
 
 
 ?>
+
+$search = array('Make'=> 'Audi','year' = 2015);
