@@ -40,7 +40,7 @@
     "Dealer": "halidisan",
     "Year": 2009,
     "Mileage": 26057,
-    "Price": 25543,
+    "Price": 15543,
     "Color": "GRAY",
     "N/U": "U",
     "Status": "Stock",
@@ -52,10 +52,10 @@
     "Dealer": "ryuimader",
     "Year": 2013,
     "Mileage": 30825,
-    "Price": 39533,
+    "Price": 20533,
     "Color": "SOUL RED",
     "N/U": "U",
-    "Status": "Sell",
+    "Status": "Bid",
     "VIN": "KL4CJCSBXDB107362"
   },
   {
@@ -63,7 +63,7 @@
     "Maker": "Fiat",
     "Dealer": "halidisan",
     "Year": 2013,
-    "Mileage": 32220,
+    "Mileage": 22220,
     "Price": 20114,
     "Color": "WHITE",
     "N/U": "U",
@@ -88,7 +88,7 @@
     "Dealer": "alde_ashcraft",
     "Year": 2016,
     "Mileage": 376,
-    "Price": 17578,
+    "Price": 37578,
     "Color": "SILVER",
     "N/U": "N",
     "Status": "Bid",
@@ -100,10 +100,10 @@
     "Dealer": "leom_stol",
     "Year": 2010,
     "Mileage": 23490,
-    "Price": 38847,
+    "Price": 18847,
     "Color": "SILVER METALLIC",
     "N/U": "U",
-    "Status": "Sell",
+    "Status": "Sold",
     "VIN": "JKAVFED167B593117"
   },
   {
@@ -112,10 +112,10 @@
     "Dealer": "je_sokol",
     "Year": 2011,
     "Mileage": 27260,
-    "Price": 11922,
+    "Price": 21922,
     "Color": "CRYSTAL WHITE",
     "N/U": "U",
-    "Status": "Sell",
+    "Status": "Sold",
     "VIN": "SAJWA71B78SH74184"
   },
   {
@@ -136,10 +136,10 @@
     "Dealer": "alde_ashcraft",
     "Year": 2010,
     "Mileage": 77,
-    "Price": 27448,
+    "Price": 20448,
     "Color": 0,
     "N/U": "N",
-    "Status": "Bid",
+    "Status": "Stock",
     "VIN": "1C6RR6FT6ES139909"
   },
   {
@@ -148,7 +148,7 @@
     "Dealer": "artana",
     "Year": 2015,
     "Mileage": 32100,
-    "Price": 21647,
+    "Price": 26647,
     "Color": "SILVER",
     "N/U": "U",
     "Status": "Stock",
@@ -160,10 +160,10 @@
     "Dealer": "leom_stol",
     "Year": 2009,
     "Mileage": 27355,
-    "Price": 15758,
+    "Price": 18758,
     "Color": "CARBON STEEL GRAY",
     "N/U": "U",
-    "Status": "Sell",
+    "Status": "Sold",
     "VIN": "YS3FD79Y866007678"
   },
   {
@@ -172,10 +172,10 @@
     "Dealer": "adrianaad",
     "Year": 2015,
     "Mileage": 23085,
-    "Price": 25113,
+    "Price": 23113,
     "Color": "MINERAL GRAY",
     "N/U": "U",
-    "Status": "Sell",
+    "Status": "Sold",
     "VIN": "2CNFLCEW1A6302806"
   },
   {
@@ -196,7 +196,7 @@
     "Dealer": "nanjea",
     "Year": 2013,
     "Mileage": 24270,
-    "Price": 36434,
+    "Price": 19434,
     "Color": 0,
     "N/U": "U",
     "Status": "Stock",
@@ -208,7 +208,7 @@
     "Dealer": "sezem",
     "Year": 2012,
     "Mileage": 19780,
-    "Price": 34880,
+    "Price": 24880,
     "Color": "GRAY",
     "N/U": "U",
     "Status": "Stock",
@@ -220,10 +220,10 @@
     "Dealer": "mace-rey",
     "Year": 2010,
     "Mileage": 146,
-    "Price": 38269,
+    "Price": 28269,
     "Color": "NEBULA GRAY",
     "N/U": "N",
-    "Status": "Bid",
+    "Status": "Stock",
     "VIN": "JA3CR56V9MZ017964"
   },
   {
@@ -232,10 +232,10 @@
     "Dealer": "ryuicamen",
     "Year": 2011,
     "Mileage": 315,
-    "Price": 38535,
+    "Price": 18535,
     "Color": "ICE SILVER",
     "N/U": "N",
-    "Status": "Bid",
+    "Status": "Stock",
     "VIN": "3C63RRHL9EG161589"
   },
   {
@@ -247,7 +247,7 @@
     "Price": 22008,
     "Color": "PLATINUM GRAY",
     "N/U": "U",
-    "Status": "Sell",
+    "Status": "Sold",
     "VIN": "1N4AL2AP3BC118022"
   },
   {
@@ -256,10 +256,10 @@
     "Dealer": "sezem",
     "Year": 2013,
     "Mileage": 394,
-    "Price": 35138,
+    "Price": 25138,
     "Color": "WHITE",
     "N/U": "N",
-    "Status": "Bid",
+    "Status": "Stock",
     "VIN": "5YFBU4EE3CP017216"
   },
   {
@@ -268,10 +268,10 @@
     "Dealer": "puvanderb",
     "Year": 2011,
     "Mileage": 23095,
-    "Price": 18723,
+    "Price": 14723,
     "Color": "LIQUID SILVER",
     "N/U": "U",
-    "Status": "Sell",
+    "Status": "Sold",
     "VIN": "2HGFG3B50FH506417"
   },
   {
@@ -280,10 +280,10 @@
     "Dealer": "ir_sto",
     "Year": 2013,
     "Mileage": 19755,
-    "Price": 31256,
+    "Price": 21256,
     "Color": "GRAY",
     "N/U": "U",
-    "Status": "Sell",
+    "Status": "Sold",
     "VIN": "1C3LC45B19N517009"
   },
   {
@@ -292,10 +292,10 @@
     "Dealer": "nanjea",
     "Year": 2009,
     "Mileage": 18650,
-    "Price": 26491,
+    "Price": 20491,
     "Color": "BLIZZARD PEARL",
     "N/U": "U",
-    "Status": "Sell",
+    "Status": "Sold",
     "VIN": "1FAHP3H28CL185459"
   },
   {
@@ -304,10 +304,10 @@
     "Dealer": "terryas",
     "Year": 2011,
     "Mileage": 264,
-    "Price": 31367,
+    "Price": 17367,
     "Color": "GRAY",
     "N/U": "N",
-    "Status": "Bid",
+    "Status": "Stock",
     "VIN": "1FTEX1C89AKE48851"
   },
   {
@@ -316,10 +316,10 @@
     "Dealer": "sezem",
     "Year": 2016,
     "Mileage": 117,
-    "Price": 22789,
+    "Price": 32789,
     "Color": "BASQUE RED",
     "N/U": "N",
-    "Status": "Bid",
+    "Status": "Stock",
     "VIN": "2T1KE40E59C003203"
   },
   {
@@ -328,10 +328,10 @@
     "Dealer": "mace-rey",
     "Year": 2014,
     "Mileage": 16491,
-    "Price": 18984,
+    "Price": 20984,
     "Color": "RED",
     "N/U": "U",
-    "Status": "Sell",
+    "Status": "Sold",
     "VIN": "JTHBE262962005319"
   },
   {
@@ -341,9 +341,9 @@
     "Year": 2010,
     "Mileage": 24978,
     "Price": 11498,
-    "Color": "BRILLIANT",
+    "Color": "SILVER",
     "N/U": "U",
-    "Status": "Sell",
+    "Status": "Sold",
     "VIN": "3VW467AT7CM649990"
   },
   {
@@ -352,10 +352,10 @@
     "Dealer": "mace-rey",
     "Year": 2015,
     "Mileage": 41858,
-    "Price": 33861,
+    "Price": 23861,
     "Color": "RED",
     "N/U": "U",
-    "Status": "Sell",
+    "Status": "Sold",
     "VIN": "1FDZU90L3LVA58195"
   },
   {
@@ -364,10 +364,10 @@
     "Dealer": "ir_sto",
     "Year": 2014,
     "Mileage": 43675,
-    "Price": 25063,
+    "Price": 22063,
     "Color": "PEARL",
     "N/U": "U",
-    "Status": "Sell",
+    "Status": "Sold",
     "VIN": "1GTCS14R9K8543244"
   },
   {
@@ -376,10 +376,10 @@
     "Dealer": "artana",
     "Year": 2009,
     "Mileage": 320,
-    "Price": 21456,
+    "Price": 25456,
     "Color": "PHANTOM BLACK",
     "N/U": "N",
-    "Status": "Bid",
+    "Status": "Stock",
     "VIN": "3DEZL100JNO661643"
   },
   {
@@ -388,10 +388,10 @@
     "Dealer": "halidisan",
     "Year": 2014,
     "Mileage": 32495,
-    "Price": 36420,
+    "Price": 22420,
     "Color": "GLACIER WHITE",
     "N/U": "U",
-    "Status": "Sell",
+    "Status": "Sold",
     "VIN": "8ZZPK228AJC600922"
   },
   {
@@ -400,10 +400,10 @@
     "Dealer": "leom_stol",
     "Year": 2016,
     "Mileage": 84,
-    "Price": 36591,
+    "Price": 25591,
     "Color": "BLACK",
     "N/U": "N",
-    "Status": "Bid",
+    "Status": "Stock",
     "VIN": "3DFLU597IER406519"
   },
   {
@@ -412,7 +412,7 @@
     "Dealer": "ryuimader",
     "Year": 2009,
     "Mileage": 57185,
-    "Price": 20234,
+    "Price": 15234,
     "Color": "BROWN",
     "N/U": "U",
     "Status": "Stock",
@@ -424,10 +424,10 @@
     "Dealer": "terryas",
     "Year": 2015,
     "Mileage": 365,
-    "Price": 38413,
+    "Price": 24413,
     "Color": "JUNIPER GREEN",
     "N/U": "N",
-    "Status": "Bid",
+    "Status": "Stock",
     "VIN": "3NXAZ505FVQ618117"
   },
   {
@@ -436,7 +436,7 @@
     "Dealer": "artana",
     "Year": 2012,
     "Mileage": 47190,
-    "Price": 23730,
+    "Price": 40730,
     "Color": "GLACIER WHITE",
     "N/U": "U",
     "Status": "Stock",
@@ -448,7 +448,7 @@
     "Dealer": "ryuicamen",
     "Year": 2011,
     "Mileage": 33370,
-    "Price": 36941,
+    "Price": 19941,
     "Color": "URBAN TITANIUM METALLIC",
     "N/U": "U",
     "Status": "Stock",
@@ -460,10 +460,10 @@
     "Dealer": "adrianaad",
     "Year": 2012,
     "Mileage": 29717,
-    "Price": 15826,
+    "Price": 22826,
     "Color": "WHITE",
     "N/U": "U",
-    "Status": "Sell",
+    "Status": "Sold",
     "VIN": "6UDOW967BRZ353118"
   },
   {
@@ -472,10 +472,10 @@
     "Dealer": "je_sokol",
     "Year": 2013,
     "Mileage": 363,
-    "Price": 28247,
+    "Price": 25247,
     "Color": "OBSIDIAN BLUE",
     "N/U": "N",
-    "Status": "Bid",
+    "Status": "Stock",
     "VIN": "3VYWS391BUN690863"
   },
   {
@@ -484,10 +484,10 @@
     "Dealer": "leom_stol",
     "Year": 2010,
     "Mileage": 41077,
-    "Price": 28647,
-    "Color": 0,
+    "Price": 18647,
+    "Color": "SILVER",
     "N/U": "U",
-    "Status": "Sell",
+    "Status": "Sold",
     "VIN": "3ASCQ847MJU539613"
   },
   {
@@ -496,7 +496,7 @@
     "Dealer": "terryas",
     "Year": 2011,
     "Mileage": 156,
-    "Price": 20467,
+    "Price": 28467,
     "Color": "BLUE",
     "N/U": "N",
     "Status": "Bid",
@@ -511,7 +511,7 @@
     "Price": 32670,
     "Color": "WHITE",
     "N/U": "U",
-    "Status": "Stock",
+    "Status": "Bid",
     "VIN": "7TPJW282GOZ005402"
   },
   {
@@ -523,7 +523,7 @@
     "Price": 16153,
     "Color": "CRYSTAL BLACK PEARL",
     "N/U": "U",
-    "Status": "Bid",
+    "Status": "Stock",
     "VIN": "3GANY325GRY480967"
   },
   {
@@ -532,10 +532,10 @@
     "Dealer": "ryuimader",
     "Year": 2014,
     "Mileage": 31940,
-    "Price": 38138,
+    "Price": 24138,
     "Color": "WHITE",
     "N/U": "U",
-    "Status": "Sell",
+    "Status": "Bid",
     "VIN": "6SUAW670OYB219629"
   },
   {
@@ -544,7 +544,7 @@
     "Dealer": "ir_sto",
     "Year": 2014,
     "Mileage": 29267,
-    "Price": 32250,
+    "Price": 22250,
     "Color": "SEA GLASS PEARL",
     "N/U": "U",
     "Status": "Stock",
@@ -559,7 +559,7 @@
     "Price": 25886,
     "Color": "OBSIDIAN BLACK",
     "N/U": "U",
-    "Status": "Sell",
+    "Status": "Sold",
     "VIN": "0UFBK501EQL664638"
   },
   {
@@ -568,10 +568,10 @@
     "Dealer": "nanttan",
     "Year": 2013,
     "Mileage": 27795,
-    "Price": 35346,
+    "Price": 15346,
     "Color": "PEARL",
     "N/U": "U",
-    "Status": "Bid",
+    "Status": "Stock",
     "VIN": "7SXKK933OJT777122"
   },
   {
@@ -583,7 +583,7 @@
     "Price": 18025,
     "Color": "WHITE PLATINUM",
     "N/U": "U",
-    "Status": "Bid",
+    "Status": "Stock",
     "VIN": "6DKBR716QRO050949"
   },
   {
@@ -595,7 +595,7 @@
     "Price": 28991,
     "Color": "PERFORM BLUE",
     "N/U": "N",
-    "Status": "Bid",
+    "Status": "Stock",
     "VIN": "5PTKJ896ZBO833206"
   }
 ]
