@@ -10,10 +10,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["username"]) && !empty
     $username = test_input($_POST["username"]);
     $password = test_input($_POST["password"]);
     $cursor = $user_col->find(array("username" => $username));
-    if($cursor["password"] == $password){
-        $_SESSION["valid"] = true;
-        $_SESSION["timeout"] = time();
-        $_SESSION["username"] = $username;
+    if($cursor == NULL){
+        echo "Invalid username"
+    }
+    else{
+        if($cursor["password"] == $password){
+            $_SESSION["valid"] = true;
+            $_SESSION["timeout"] = time();
+            $_SESSION["username"] = $username;
+        }
     }
 }
 ?>
