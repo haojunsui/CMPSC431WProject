@@ -5,7 +5,7 @@ Model.json
 User.json
 (FirstName: Name, LastName: String, Username: String, Email: String, Password: String, DOB: String, Income: Double, Phone: String, Gender: String, Rating: Double, U/D: String)
 Car.json
-(Model: String, Maker: String, Dealer: String, Mileage: Int, Price: Double, Color: String, N/U: String, Status: String, VIN: String)
+(Model: String, Maker: String, Dealer: String, Year: Int, Mileage: Int, Price: Double, Color: String, N/U: String, Status: String, VIN: String)
 Sold.json
 (Username: String, Dealer: String, VIN: String)
 Bid.json
