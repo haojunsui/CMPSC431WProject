@@ -27,7 +27,8 @@
 		You are Buying this car<br>
 		<input type="text" id="firstname" placeholder="First name"><br>
 		<input type="text" id="lastname" placeholder="Last name"><br>
-		<input type="text" id="address" placeholder="address"><br>
+		<input type="text" id="address1" placeholder="address1"><br>
+		<input type="text" id="address2" placeholder="address2"><br>
 		<input type="text" id="cardNo" placeholder="cardNo"><br>
 		<input type="text" id="CVV" placeholder="CVV"><br>
 	</form>
