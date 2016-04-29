@@ -25,16 +25,27 @@
 	<br>
 	<p style="text-align:center;">
 		About us
+		<br>
 		Team: Big Leg Carry
+		<br>
 		Sui, Haojun aka Big leg
+		<br>
 		hzs5220@psu.edu
+		<br>
 		Deng, Yuanpei
+		<br>
 		dengyuanpei@gmail.com
+		<br>
 		Zhang, Chenyu
+		<br>
 		dianachenyuzhang@gmail.com
+		<br>
 		Wang, Hao
+		<br>
 		haowang5128@gmail.com
+		<br>
 		Chen, Shiqing
+		<br>
 		u0vv0u@gmail.com
 	</p>
 	<br>
