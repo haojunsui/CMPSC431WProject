@@ -23,7 +23,7 @@
 		</ul>
 	</div>
 	<br>
-	<img src="/www/Screen Shot 2016-04-28 at 11.09.29 PM" alt="image" style="width:128px;height:128px;">
+	<img src="/www/Screen Shot 2016-04-28 at 11.09.29 PM.png" alt="image" style="width:128px;height:128px;">
 	<br>
 	<div class="footer">
 		<p class="footer-links">
