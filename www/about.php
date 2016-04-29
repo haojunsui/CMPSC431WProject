@@ -23,6 +23,21 @@
 		</ul>
 	</div>
 	<br>
+	<p style="text-align:center;">
+		About us
+		Team: Big Leg Carry
+		Sui, Haojun aka Big leg
+		hzs5220@psu.edu
+		Deng, Yuanpei
+		dengyuanpei@gmail.com
+		Zhang, Chenyu
+		dianachenyuzhang@gmail.com
+		Wang, Hao
+		haowang5128@gmail.com
+		Chen, Shiqing
+		u0vv0u@gmail.com
+	</p>
+	<br>
 	<div class="footer">
 		<p class="footer-links">
 			<a href="index.php">Home</a>
